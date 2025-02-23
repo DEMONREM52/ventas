@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bodega mayorista. Ventas al por mayor y al detal, artículos para el hogar y cacharrería en general">
+    <meta name="keywords" content="catalogo, belleza, secadores, cepillo secador, hogar, deporte, armarios, baño, organizadores, freidoras de aire, radios, teléfonos, lamparas, lamparas infantiles, ventiladores, bombillos, camaras, camaras inteligentes, relojes, reloj, reloj de pared, reloj de mesa, smartwatch, microondas, patilleras, máquinas de motilar, coser">
+    <title>Catálogo - Calculadoras</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg" type="image/x-icon" style="border-radius: 50%;">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../app.js"></script>
+    <link rel="stylesheet" href="/catalogoStyle.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X07XGLGN51"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-X07XGLGN51');
+    </script>
+
+
+</head>
+
+<body id="content">
+
+    <div class="container-image">
+        <img src="https://i.ibb.co/XX3q1gr/BELLEZA-VARISTI-2.jpg" alt="Imagen" class="image" loading="lazy">
+    </div>
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 navbar-custom">
+        <div class="container">
+            <a style="padding-left: 20px;" class="navbar-brand" href="/">
+                <img src="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg" alt="Logo" width="70" height="70" loading="lazy" style="border-radius: 50%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: solid 2px rgb(0, 0, 0);">
+                <i class="bi bi-list" style="color: #000000;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="/">Inicio</a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="./#catalogos">Catálogos</a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="#contactoFooter">Contacto</a></b>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="#">Sobre Nosotros</a></b>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+    <div class="container mt-5">
+        <h1 style="color: #000000; text-align: center;">CATÁLOGO DE CALCULADORAS</h1>
+
+        <!-- Div que representa el carrito -->
+        <div>
+            <button id="toggle-carrito" onmouseover="startAnimation()" onmouseout="stopAnimation()"
+                onclick="toggleCarrito()">
+                <img class="imagen-carrito" src="https://i.ibb.co/4NjvpxJ/sinmovimiento.jpg" alt="" loading="lazy">
+            </button>
+            <div id="carrito" style="display: none;">
+                <label class="carrito" for="nombre">Por favor digite su nombre completo para realizar la compra:</label>
+                <input class="carrito" type="text" id="nombre" required>
+
+                <!-- Radiobuttons -->
+                <div>
+                    <label class="carrito" for="tarifa">Tarifa de envio:</label>
+                </div>
+
+                <div>
+                    <input class="carrito" type="radio" id="opcion1" name="opcion" value="0">
+                    <label class="carrito" for="opcion1">RECOGER EN TIENDA</label><br>
+                    <input class="carrito" type="radio" id="opcion2" name="opcion" value="11000">
+                    <label class="carrito" for="opcion2">MEDELLIN - $11.000</label><br>
+                    <input class="carrito" type="radio" id="opcion3" name="opcion" value="12000">
+                    <label class="carrito" for="opcion3">POBLADO - $12.000</label><br>
+                    <input class="carrito" type="radio" id="opcion4" name="opcion" value="12000">
+                    <label class="carrito" for="opcion4">PALMAS - $12.000</label><br>
+                    <input class="carrito" type="radio" id="opcion5" name="opcion" value="12000">
+                    <label class="carrito" for="opcion5">PICACHO - $12.000</label><br>
+                    <input class="carrito" type="radio" id="opcion6" name="opcion" value="13000">
+                    <label class="carrito" for="opcion6">BELLO - $13.000</label><br>
+                    <input class="carrito" type="radio" id="opcion7" name="opcion" value="15000">
+                    <label class="carrito" for="opcion7">NAVARRA BELLO - $15.000</label><br>
+                    <input class="carrito" type="radio" id="opcion8" name="opcion" value="15000">
+                    <label class="carrito" for="opcion8">ENVIGADO - $15.000</label><br>
+                    <input class="carrito" type="radio" id="opcion9" name="opcion" value="15000">
+                    <label class="carrito" for="opcion9">ITAGUI - $15.000</label><br>
+                    <input class="carrito" type="radio" id="opcion10" name="opcion" value="15000">
+                    <label class="carrito" for="opcion10">LA ESTRELLA - $15.000</label><br>
+                    <input class="carrito" type="radio" id="opcion11" name="opcion" value="15000">
+                    <label class="carrito" for="opcion11">SANTO DOMINGO - $15.000</label><br>
+                    <input class="carrito" type="radio" id="opcion12" name="opcion" value="16000">
+                    <label class="carrito" for="opcion12">SAN CRISTOBAL - $16.000</label><br>
+                    <input class="carrito" type="radio" id="opcion13" name="opcion" value="18000">
+                    <label class="carrito" for="opcion13">SABANETA - $18.000</label><br>
+                    <input class="carrito" type="radio" id="opcion14" name="opcion" value="18000">
+                    <label class="carrito" for="opcion14">COPACABANA - $18.000</label><br>
+                    <input class="carrito" type="radio" id="opcion15" name="opcion" value="18000">
+                    <label class="carrito" for="opcion15">SAN ANTONIO DE PRADO - $18.000</label><br>
+                    <input class="carrito" type="radio" id="opcion16" name="opcion" value="20000">
+                    <label class="carrito" for="opcion16">CALDAS - $20.000</label><br>
+                    <input class="carrito" type="radio" id="opcion17" name="opcion" value="28000">
+                    <label class="carrito" for="opcion17">GIRARDOTA - $28.000</label><br>
+                    <input class="carrito" type="radio" id="opcion18" name="opcion" value="0">
+                    <label class="carrito" for="opcion18">COSTO VARIABLE (DEPENDE DE LA TRANSPORTADORA Y LA CIUDAD DE
+                        DESTINO)</label><br>
+                </div>
+
+                <!-- Textarea para la dirección -->
+                <label class="carrito" for="direccion">Detalles de la dirección: (CÉDULA, TELÉFONO, DIRECCIÓN,
+                    BARRIO)</label><br>
+                <textarea class="carrito" id="direccion" rows="4" cols="50"></textarea><br>
+                <button class="carritop btn btn-danger btn-block text-center mb-3 btn-sm"
+                    onclick="limpiarCarritoYLocalStorage()">Vaciar carrito</button>
+                <div class="invoice-container">
+                    <header class="invoice-header">
+                        <div class="logo-container">
+                            <img src="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg" alt="Logo del negocio"
+                                class="logo" loading="lazy" style="border-radius: 50%;">
+                        </div>
+                        <div class="business-details">
+                            <h1>El Hueco en tu Casa</h1>
+                            <p>NIT 901841728</p>
+                            <p>VARISTI S.A.S.</p>
+                            <p>CR 54 46-21 LC 134 CC DISCONFITES</p>
+                            <p>varistisas@gmail.com</p>
+                        </div>
+                        <div class="invoice-date" id="fecha"></div>
+                    </header>
+
+                    <section class="invoice-items">
+                        <ol class="carrito" style="font-size: x-large;" id="lista-carrito">
+                            <!-- Aquí se insertarán los productos -->
+                        </ol>
+                    </section>
+
+                    <section class="invoice-total">
+                        <p class="carrito" id="total-carrito" style="display: none; font-size: xx-large;">Total a pagar:
+                        </p>
+                    </section>
+                </div>
+
+                <script src="script.js"></script>
+                <script>
+                    // Configurar la fecha
+                    document.getElementById('fecha').textContent = new Date().toLocaleDateString();
+                </script>
+                <!-- Botón para comprar -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="carrito btn btn-primary border border-dark mb-3 btn-sm"
+                            onclick="comprarNatalia()">Compra con nuestra asesora Natalia Giraldo &nbsp;&nbsp;&nbsp; <img
+                                src="https://www.elhuecoentucasa.com/imagenes/asesor-mujer.webp" alt="" width="40px" height="36px" loading="lazy">
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="carrito btn btn-primary border border-dark mb-3 btn-sm"
+                            onclick="comprarMariana()">Compra con nuestro asesor Mariana Zapata &nbsp;&nbsp;&nbsp; <img
+                                src="https://www.elhuecoentucasa.com/imagenes/asesor-mujer.webp" alt="" width="40px" height="36px" loading="lazy">
+                        </button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="carrito btn btn-primary border border-dark mb-3 btn-sm"
+                            onclick="comprarCristian()">Compra con nuestro asesor Cristian Zuñiga &nbsp;&nbsp;&nbsp; <img
+                                src="https://www.elhuecoentucasa.com/imagenes/asesor-hombre.webp" alt="" width="40px" height="36px" loading="lazy">
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="carrito btn btn-primary border border-dark mb-3 btn-sm"
+                            onclick="comprarLuis()">Compra con nuestro asesor Luis Velasquez &nbsp;&nbsp;&nbsp; <img
+                                src="https://www.elhuecoentucasa.com/imagenes/asesor-hombre.webp" alt="" width="40px"
+                                height="36px" loading="lazy"></button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="row buscador" id="catalogos">
+            <div class="col-md-12">
+                <div class="search-form">
+                    <input type="text" id="buscador" class="search-input" placeholder="Buscar por nombre...">
+                    <ul id="sugerencias" class="suggestions-list"></ul>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="container mt-3">
+            <h2>Filtrar por Precio</h2>
+            <div class="row mb-4">
+                <div class="col-md-5">
+                    <label for="precio-min">Precio Mínimo (COP):</label>
+                    <div class="input-group">
+                        <input type="text" id="precio-min" class="form-control" placeholder="0" value="0">
+                        <span class="input-group-text">$</span>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <label for="precio-max">Precio Máximo (COP):</label>
+                    <div class="input-group">
+                        <input type="text" id="precio-max" class="form-control" placeholder="1000000" value="1000000">
+                        <span class="input-group-text">$</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="row mt-3" id="catalogos">
+            <% catalogos.forEach((catalogo, index)=> { %>
+                <% if (catalogo.catalogo==='Calculadoras' && catalogo.certificacion==='siHay' ) { %>
+                    <div class="col-md-4 mb-4 contenedor-autos" data-nombre="<%= catalogo.nombre %>" data-precio="<%= catalogo.precio %>">
+                        <div class="card">
+                            <img src="<%= catalogo.imagen %>" class="card-img-top" alt="<%= catalogo.nombre %>" loading="lazy">
+                            <div class="card-body">
+                                <h3 class="card-title" style="display: none;">
+                                    <%= catalogo.catalogo %>
+                                </h3>
+                                <h3 class="card-title  text-uppercase">
+                                    <%= catalogo.nombre %>
+                                </h3>
+        
+                                <% if (catalogo.terminos_garantia) { %>
+                                    <a style="display: flex; align-items: center; margin-left: 0%; width: 100%;" href="#"
+                                        class="btn btn-primary ver-terminos_garantia" data-index="<%= index %>">
+                                        <box-icon name='chevron-down' type='solid' animation='tada'></box-icon>TERMINOS DE GARANTÍA</a>
+                                    <a href="#" class="btn btn-secondary ocultar-terminos_garantia"
+                                        style="display: none; align-items: center; margin-left: 0%; width: 100%;"><box-icon
+                                            name='chevron-down' type='solid' animation='tada' rotate='180'></box-icon>TERMINOS DE GARANTÍA</a>
+                                <% } %>
+        
+                                <a style="display: flex; align-items: center; margin-left: 88%; width: 50px;" href="#"
+                                    class="btn btn-primary ver-detalles" data-index="<%= index %>"><box-icon name='info-circle' ></box-icon></a>
+                                <a href="#" class="btn btn-secondary mostrar-menos"
+                                    style="display: none; align-items: center; margin-left: 88%; width: 50px;"><box-icon name='info-circle' ></box-icon></a>
+                                <b>
+                                    <p class="card-text descripcion">
+                                        <%= catalogo.descripcion %>
+                                    </p>
+                                </b>
+                                <b>
+                                    <p class="card-text terminos_garantia">
+                                        <%= catalogo.terminos_garantia %>
+                                    </p>
+                                </b>
+                                <p class="card-text"
+                                    style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 30px;">
+                                    Precio: $<%= catalogo.precio.toLocaleString('es-CO') %> COP</p>
+                                <form class="agregar-al-carrito" action="/agregar-al-carrito" method="POST">
+                                    <!-- Campos ocultos para el ID, nombre y precio del producto -->
+                                    <input type="hidden" name="productoId" value="<%= catalogo.id %>">
+                                    <input type="hidden" name="nombreProducto" value="<%= catalogo.nombre %>">
+                                    <input type="hidden" name="precioProducto" value="<%= catalogo.precio %>">
+                                    <!-- Botón para agregar al carrito -->
+                                    <button class="btn btn-primary" type="submit">Agregar al carrito</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            <% }); %>
+        </div>
+    </div>
+
+    <!-- ESTE ES EL FOOTER -->
+
+    <footer class="p-3 mb-2" class="text-muted">
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <hr class="my-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem "></i>NUESTROS CATÁLOGOS
+                        </h6>
+                        <hr class="my-4">
+                        <p>
+                            <a href="./#bellezaycuidadopersonal" class="text-reset">BELLEZA Y CUIDADO PERSONAL</a>
+                        </p>
+                        <p>
+                            <a href="./#conectividadyelectronica" class="text-reset">CONECTIVIDAD Y ELECTRÓNICA</a>
+                        </p>
+                        <p>
+                            <a href="./#energiaeiluminacion" class="text-reset">ENERGÍA E ILUMINACIÓN</a>
+                        </p>
+                        <p>
+                            <a href="./#hogarycocina" class="text-reset">HOGAR Y COCINA</a>
+                        </p>
+                        <p>
+                            <a href="./#jugueteriayentretenimiento" class="text-reset">JUGUETERÍA Y ENTRETENIMIENTO</a>
+                        </p>
+                        <p>
+                            <a href="./#mascotas" class="text-reset">MASCOTAS</a>
+                        </p>
+                        <p>
+                            <a href="./#saludybienestar" class="text-reset">SALUD Y BIENESTAR</a>
+                        </p>
+
+
+
+
+
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">
+                        <!-- Links -->
+                        <hr class="my-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            CENTRO DE AYUDA
+                        </h6>
+                        <hr class="my-4">
+                        <p>
+                            <a id="contactoFooter"
+                                href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+                                class="text-uppercase text-reset">CONTÁCTANOS</a>
+                        </p>
+                        <p>
+                            <a href="../../public/politicas_de_privacidad.pdf" download="politicas_de_privacidad.pdf"
+                                class="text-uppercase text-reset">POLÍTICAS Y PRIVACIDAD</a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <hr class="my-4">
+                        <h6 class="text-uppercase fw-bold mb-4">¿Deseas más información?</h6>
+                        <hr class="my-4">
+                        <p>
+                            <a class="text-uppercase" href="https://maps.app.goo.gl/U1r1XYDnRhXrnMzi7" target="_blank"
+                                style="color: #000000;">
+                                <img src="https://i.ibb.co/CtJjRRF/pixelcut-export-14.png" alt="" width="24px"
+                                    height="24px" loading="lazy">CALLE 24 #70-06, BELEN, AEROPARQUE
+                            </a>
+                        </p>
+                        <p>
+                            <a class="text-uppercase" href="mailto:elhuecoentucasa@gmail.com" target="_blank"
+                                style="color: #000000;">
+                                <img src="https://i.ibb.co/YBd0krT/gmail.png" alt="" width="24px" height="24px" loading="lazy">
+                                elhuecoentucasa@gmail.com
+                            </a>
+                        </p>
+                        <p>
+                            <i class="bi bi-telephone-fill">3113752583</i>
+                        </p>
+                        <hr class="my-4">
+                         <h3>Nuestro Horario de Atención</h3>
+                        <h5>Lunes a Lunes: 8:00AM - 10:00PM</h5>
+                    </div>
+                    <section class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                        <div>
+                            <a href="https://www.facebook.com/profile.php?id=61560352376065&locale=es_LA"
+                                target="_blank" class="me-4 text-reset social-link">
+                                <img src="https://i.ibb.co/t2fgDs8/pixelcut-export-12.png" alt="Facebook" width="32px"
+                                    height="32px" loading="lazy">
+                            </a>
+
+                            <!-- <a href="https://twitter.com/?lang=es" target="blank" class="me-4 text-reset social-link">
+                                <i class="bi bi-twitter-x" style="color: #000000;"></i>
+                            </a> -->
+
+                            <a href="https://www.instagram.com/cacharreria.varisti?igsh=MXhtZG1vNmU2MHo2dg=="
+                                target="_blank" class="me-4 text-reset social-link">
+                                <img src="https://i.ibb.co/k8D15jF/pixelcut-export-10.png" alt="Instagram" width="32px"
+                                    height="32px" loading="lazy">
+                            </a>
+                            <a href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+                                target="_blank" class="me-4 text-reset social-link">
+                                <img src="https://i.ibb.co/LJMBh1s/social.png" alt="Whatsapp" width="32px"
+                                    height="32px" loading="lazy">
+                            </a>
+
+                        </div>
+                        <!-- Right -->
+                    </section>
+                    <% if (esMayorista) { %>
+                        <button style="width: 100px; height: 100px; margin-left: auto; border-radius: 50%; pointer-events: visible;" id="detal-btn" ><img style="height: 80px; width: 80px; border-radius: 50%;" src="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg" loading="lazy" style="border-radius: 50%;"></button>
+                    <% } else { %>
+                        <button style="width: 100px; height: 100px; margin-left: auto; border-radius: 50%; pointer-events: visible;" id="mayoristas-btn" ><img style="height: 80px; width: 80px; border-radius: 50%;" src="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg" loading="lazy" style="border-radius: 50%;"></button>
+                    <% } %>
+                                <!-- Grid row -->
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mx-auto text-center">
+                            <hr class="my-4">
+                            <p class="text-uppercase">&copy; <%= new Date().getFullYear() %> El Hueco en tu Casa... Todos los
+                                    derechos reservados...</p>
+                            <p>
+                                <a href="/politicas" class="text-uppercase text-reset" target="_blank">Política de
+                                    privacidad | Términos y condiciones</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+
+
+    <div class="whatsapp-container">
+        <a href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+            target="_blank">
+            <div class="mensaje-burbuja">¿Quieres asesoría?<br><b>Activar chat</b></div>
+        </a>
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+            target="_blank" class="whatsapp-btn">
+            <img src="https://i.ibb.co/LJMBh1s/social.png" alt="WhatsApp" loading="lazy">
+        </a>
+    </div>
+
+
+
+</body>
+
+<script>
+    
+    document.getElementById('mayoristas-btn').addEventListener('click', function() {
+        Swal.fire({
+            title: 'Ingresa el código de acceso',
+            input: 'text',
+            inputPlaceholder: 'Código de acceso',
+            showCancelButton: true,
+            confirmButtonText: 'Enviar',
+            preConfirm: (code) => {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        if (code.toLowerCase() === 'mayorista') {
+                            resolve(true);
+                        } else {
+                            Swal.showValidationMessage('Código incorrecto');
+                            resolve(false);
+                        }
+                    }, 1000);
+                });
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch('/guardar_sesion', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ acceso: 'mayoristas' })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Recarga la página para aplicar los cambios de sesión
+                        location.reload();
+                    }
+                });
+            }
+        });
+    });
+
+    
+
+    document.getElementById('detal-btn').addEventListener('click', function() {
+    Swal.fire({
+        title: '¿Estás seguro de cambiar a precio detal?',
+        text: 'Esta acción cambiará tu sesión a precio detal.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí, cambiar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire({
+                title: 'Confirmar cambio a precio detal',
+                text: 'Por favor, confirma que estás completamente seguro de cambiar a precio detal.',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, estoy seguro',
+                cancelButtonText: 'No, cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Envía una solicitud al servidor para destruir la sesión de mayoristas
+                    fetch('/destruir_sesion_mayoristas', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ accion: 'destruir' })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            // Recarga la página para aplicar los cambios de sesión
+                            location.reload();
+                        }
+                    });
+                }
+            });
+        }
+    });
+});
+</script>
+
+<script src="/catalogoScripts.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</html>

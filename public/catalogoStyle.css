@@ -1,0 +1,767 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+html {
+    zoom: 0.8;
+}
+
+body {
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    background: rgb(4, 125, 128);
+    background: linear-gradient(0deg, rgb(4, 125, 128) 0%, rgb(145, 253, 255) 42%, rgb(219, 254, 255) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    width: 100%;
+    max-width: auto;
+    color: #000000;
+}
+
+a {
+    font-size: large;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    /* Elimina el subrayado predeterminado */
+}
+
+/* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+    color: #000000;
+}
+
+/* Color of the links AFTER scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+    color: #000000;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scroll,
+.navbar-scrolled {
+    background-color: #000000;
+}
+
+.mask-custom {
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, .15);
+}
+
+.navbar-brand {
+    font-size: 1.75rem;
+    letter-spacing: 3px;
+}
+
+.navbar-custom {
+    background-color: #b4d5ff93;
+    /* Color de fondo original */
+}
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0;
+    transition: top 0.3s;
+    z-index: 1000;
+}
+
+#content {
+    padding-top: 50px;
+    /* Ajusta esto según la altura de tu barra de navegación */
+}
+
+.card {
+    background-color: #ffffff;
+}
+
+.container-image {
+    position: relative;
+    margin-top: 40px;
+    width: auto;
+    /* Ajusta el ancho según sea necesario */
+    height: auto;
+    /* Ajusta la altura según sea necesario */
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ajusta la imagen para cubrir todo el contenedor */
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    /* Forma de montaña invertida */
+}
+
+.text {
+    position: absolute;
+    top: 20%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    /* Coloca el texto encima de la imagen */
+    color: rgb(0, 0, 0);
+    font-family: "Rubik Doodle Shadow", system-ui;
+    font-weight: 800;
+    font-style: normal;
+    /* Color del texto */
+}
+
+.buscador {
+    padding: 0 150px 0 150px;
+    margin: 120px 0 120px 0;
+}
+
+@media (max-width: 1400px) {
+    .container-image {
+        position: relative;
+        margin-top: 40px;
+        width: auto;
+        /* Ajusta el ancho según sea necesario */
+        height: auto;
+        /* Ajusta la altura según sea necesario */
+    }
+}
+
+@media (max-width: 1200px) {
+    .container-image {
+        position: relative;
+        margin-top: 40px;
+        width: auto;
+        /* Ajusta el ancho según sea necesario */
+        height: auto;
+        /* Ajusta la altura según sea necesario */
+    }
+}
+
+@media (max-width: 800px) {
+    .container-image {
+        position: relative;
+        margin-top: 40px;
+        width: auto;
+        /* Ajusta el ancho según sea necesario */
+        height: auto;
+        /* Ajusta la altura según sea necesario */
+    }
+
+    .text {
+        /* Tamaño de letra más pequeño */
+        position: absolute;
+        top: 30%;
+        left: 37%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        /* Coloca el texto encima de la imagen */
+        color: white;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    .buscador {
+        padding: 0 50px 0 50px;
+        margin: 120px 0 120px 0
+    }
+}
+
+.btn {
+    color: #000000;
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+    padding: 12px 15px 11px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px #b4ffc463, -1px -1px 1px #b4ffc463;
+    border: none;
+    transition: all 0.5s ease 0s;
+}
+
+.btn:hover,
+.btn:focus {
+    border: 2px solid white;
+    background-color: #00ff88;
+    color: #000000;
+    letter-spacing: 3px;
+    box-shadow: none;
+    outline: none;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #00ff269c;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+    border: 2px solid white;
+    background-color: #ff0000;
+    color: #000000;
+    letter-spacing: 3px;
+    box-shadow: none;
+    outline: none;
+}
+
+.card {
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    background-color: #ebebeba6;
+    border-style: solid 1px;
+    border-color: #000000;
+}
+
+.social-link {
+    display: inline-block;
+    font-size: 24px;
+    /* ajusta el tamaño del ícono según sea necesario */
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.2);
+    /* escala el tamaño del ícono al 120% */
+}
+
+.descripcion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.terminos_garantia {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+#carrito {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    color: #ffffff;
+}
+
+#toggle-carrito {
+    border: none;
+    /* Eliminar bordes */
+    padding: 0;
+    /* Eliminar relleno */
+    background: none;
+    /* Eliminar fondo */
+}
+
+#carrito-icon {
+    width: 60px;
+    /* Aumentar el tamaño de la imagen */
+    height: 60px;
+    /* Aumentar el tamaño de la imagen */
+    transition: transform 0.5s ease;
+    /* Agregar transición para la animación */
+    border-radius: 15%;
+    background: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0.521) 100%);
+}
+
+
+#carrito-icon:hover {
+    animation: tada 1s infinite;
+    /* Aplicar animación al hacer hover */
+}
+
+@keyframes tada {
+    0% {
+        transform: scale(1);
+    }
+
+    10%,
+    20% {
+        transform: scale(0.9) rotate(-3deg);
+    }
+
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: scale(1.1) rotate(3deg);
+    }
+
+    40%,
+    60%,
+    80% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.boton-eliminar-lista {
+    color: #000000;
+    background-color: #ff0000cc;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px 15px 11px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 1px #b4ffc463, -1px -1px 1px #b4ffc463;
+    border: none;
+    transition: all 0.5s ease 0s;
+}
+
+.boton-eliminar-lista:hover,
+.boton-eliminar-lista:focus {
+    border: 2px solid white;
+    background-color: #ff0000;
+    color: #000000;
+    letter-spacing: 3px;
+    box-shadow: none;
+    outline: none;
+}
+
+a {
+    color: white;
+}
+
+.carrito {
+    color: #000000;
+}
+
+
+
+
+
+/* Estilos para el contenedor del botón de WhatsApp y la burbuja de mensaje */
+.whatsapp-container {
+    position: fixed;
+    bottom: 20px;
+    /* Distancia desde la parte inferior */
+    right: 20px;
+    /* Distancia desde la parte derecha */
+    z-index: 9999;
+    /* Para asegurar que esté por encima de otros elementos */
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para la burbuja de mensaje */
+.mensaje-burbuja {
+    background-color: #00ff5e75;
+    color: #000000;
+    padding: 10px 15px;
+    border-radius: 20px 20px 5px 20px;
+    /* Ajuste en la esquina inferior izquierda */
+    margin-right: 10px;
+    /* Espacio entre la burbuja y el botón */
+    animation: mensajeEntrante 1s ease-in-out, mensajeSaliente 1s ease-in-out 10s forwards;
+    /* Animación de entrada y salida */
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-btn img {
+    width: 64px;
+    height: 64px;
+    transition: width 0.5s, height 0.5s;
+    /* Transición para el cambio de tamaño */
+}
+
+/* Estilos para el botón de WhatsApp más pequeño */
+.whatsapp-btn.small img {
+    width: 54px;
+    height: 54px;
+}
+
+/* Animación de entrada */
+@keyframes mensajeEntrante {
+    0% {
+        transform: translateX(20px);
+        /* Empieza un poco a la izquierda de la posición normal */
+        opacity: 0;
+        /* Inicia invisible */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* Llega a la posición normal */
+        opacity: 1;
+        /* Se vuelve visible */
+    }
+}
+
+/* Animación de salida */
+@keyframes mensajeSaliente {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+.imagen-carrito {
+    border-radius: 40%;
+    max-width: 120px;
+    height: 90px;
+    transition: opacity 0.5s;
+}
+
+/* Cambiar la imagen al hacer hover */
+.imagen-carrito:hover {
+    content: url('https://i.ibb.co/n6G0gwW/carro-de-la-compra.gif');
+}
+
+
+.invoice-container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 12px solid #000000;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    /* Para poder posicionar la fecha absolutamente */
+}
+
+.logo-container {
+    flex: 1;
+    text-align: left;
+    /* Alinear el logo a la izquierda */
+}
+
+.logo {
+    max-width: 100%;
+    height: auto;
+}
+
+.business-details {
+    flex: 2;
+    text-align: left;
+    /* Alinear los detalles del negocio a la izquierda */
+}
+
+.business-details h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.business-details p {
+    margin: 5px 0;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.invoice-date {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.1em;
+    color: #666;
+}
+
+.invoice-items {
+    margin-bottom: 20px;
+}
+
+.invoice-items ol {
+    list-style-type: none;
+    padding: 0;
+}
+
+.invoice-items li {
+    margin-bottom: 10px;
+    border-bottom: 10px solid #000000;
+    padding-bottom: 10px;
+}
+
+.invoice-items li:last-child {
+    border-bottom: none;
+}
+
+.invoice-total {
+    text-align: right;
+}
+
+.invoice-total p {
+    font-size: 1.4em;
+    color: #333;
+}
+
+
+
+
+
+.item-factura {
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Alineación inicial de elementos */
+}
+
+.nombre {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.detalle-producto {
+    margin-top: 5px;
+    /* Espacio entre nombre y detalle */
+}
+
+.precio,
+.cantidad,
+.total {
+    font-size: 0.9em;
+    margin-bottom: 3px;
+}
+
+.cantidad-controls {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    /* Espacio entre detalle y controles */
+}
+
+.decrementar-cantidad,
+.agregar-extra {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /* Botones redondos */
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.decrementar-cantidad span,
+.agregar-extra span {
+    display: block;
+    /* Asegura que el contenido esté centrado */
+}
+
+.decrementar-cantidad {
+    background-color: #dc3545;
+    /* Rojo para restar */
+    color: white;
+    margin-right: 5px;
+}
+
+.agregar-extra {
+    background-color: #28a745;
+    /* Verde para sumar */
+    color: white;
+    margin-left: 5px;
+}
+
+.cantidad-extra {
+    width: 4ch;
+    text-align: center;
+    margin: 0 5px;
+}
+
+.boton-eliminar-lista {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+    /* Espacio entre controles y botón eliminar */
+}
+
+.boton-eliminar-lista:hover {
+    background-color: #c82333;
+}
+
+
+
+footer {
+    background: rgb(4, 125, 128);
+    background: linear-gradient(0deg, rgb(4, 125, 128) 0%, rgb(145, 253, 255) 42%, rgb(219, 254, 255) 100%);
+    background-size: cover;
+    color: rgb(0, 0, 0);
+}
+
+/* Estilos para el input de búsqueda */
+.search-input {
+    border: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    height: 70px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2),
+        0 6px 20px rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    width: 100%;
+    /* Para asegurarse de que ocupe todo el contenedor */
+}
+
+.search-input:focus {
+    outline: none;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3),
+        0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Efecto 3D para el icono (si tienes algún icono de búsqueda) */
+.search-icon {
+    font-size: 28px;
+    color: white;
+    transform: translateY(0);
+}
+
+/* Contenedor del formulario */
+.search-form {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 600px;
+    /* Ajusta este valor según tus necesidades */
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1),
+        0 12px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 1000;
+    /* Asegura que esté por debajo de las sugerencias */
+}
+
+.search-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2),
+        0 18px 50px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    /* Asegura que esté por encima de las sugerencias */
+}
+
+/* Estilos para la lista de sugerencias */
+.suggestions-list {
+    position: absolute;
+    width: calc(100% - 2px);
+    /* Ajuste fino para alineación */
+    top: calc(100% + 2px);
+    /* Ajuste fino para alineación */
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    /* Asegura que esté por encima de todo */
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
+    transform-origin: top center;
+    transform: scaleY(0);
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.suggestions-list.show {
+    display: block;
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.suggestion-item {
+    padding: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+
+/* Estilos para el scroll */
+.suggestions-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.suggestions-list::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.suggestions-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+.filter-container {
+    background: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    height: calc(2.25rem + 2px);
+    border: 2px solid transparent;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+.input-group input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 5px rgba(0, 86, 179, 0.5);
+    outline: none;
+}
+
+.input-group-text {
+    background: white; /* Fondo blanco */
+    color: #047D80; /* Color verde fluorescente */
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    font-weight: bold; /* Opcional: hace que el signo de pesos se vea más destacado */
+}

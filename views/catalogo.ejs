@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de catálogos</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dvyenqzki/image/upload/v1727116739/LOGO-VARISTI_eulwve.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2LQNMD9R7G"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-2LQNMD9R7G');
+</script>
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+    html {
+        zoom: 0.8;
+    }
+
+    body {
+        font-family: "Roboto Slab", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        background: linear-gradient(to top, #ffffff, rgb(217, 217, 217)), linear-gradient(to bottom, #ffffff, rgb(217, 217, 217));
+        background-position: top, bottom;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        max-width: auto;
+        color: #000000;
+    }
+
+    /* Color of the links BEFORE scroll */
+    .navbar-scroll .nav-link,
+    .navbar-scroll .navbar-toggler-icon,
+    .navbar-scroll .navbar-brand {
+        color: #ffffff;
+    }
+
+    /* Color of the links AFTER scroll */
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .navbar-toggler-icon,
+    .navbar-scrolled .navbar-brand {
+        color: #fff;
+    }
+
+    /* Color of the navbar AFTER scroll */
+    .navbar-scroll,
+    .navbar-scrolled {
+        background-color: #cbbcb1;
+    }
+
+    .mask-custom {
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, .15);
+    }
+
+    .navbar-brand {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+    }
+
+    .navbar-custom {
+        background-color: #b4d5ff93;
+        /* Color de fondo original */
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        padding: 10px 0;
+        transition: top 0.3s;
+        z-index: 1000;
+    }
+
+    #content {
+        padding-top: 50px;
+        /* Ajusta esto según la altura de tu barra de navegación */
+    }
+
+    .titulo {
+        margin-top: 100px;
+    }
+
+    .btn-usuario {
+        color: #000000;
+        background-color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 300px;
+        padding: 12px 15px 11px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px #000000, -1px -1px 1px #000000;
+        border: none;
+        transition: all 0.5s ease 0s;
+        text-align: center;
+        margin-left: 71%;
+    }
+
+    .btn-usuario:hover,
+    .btn-usuario:focus {
+        border: 2px solid white;
+        background-color: #00ff15;
+        color: #000000;
+        letter-spacing: 3px;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .btnn {
+        color: #ffffff;
+        background-color: #3b3b3b;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 12px 15px 11px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px #000000, -1px -1px 1px #000000;
+        border: none;
+        transition: all 0.5s ease 0s;
+        text-align: center;
+    }
+
+    .btnn:hover,
+    .btnn:focus {
+        border: 2px solid white;
+        background-color: #000000;
+        color: #fff;
+        letter-spacing: 3px;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .btn {
+        color: #ffffff;
+        background-color: #3b3b3b;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 12px 15px 11px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px #000000, -1px -1px 1px #000000;
+        border: none;
+        transition: all 0.5s ease 0s;
+        margin-top: 20px;
+    }
+
+    .btn:hover,
+    .btn:focus {
+        border: 2px solid white;
+        background-color: #000000;
+        color: #fff;
+        letter-spacing: 3px;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .btn-danger {
+        background-color: rgb(199, 0, 0);
+    }
+
+    .btn-danger:hover {
+        background-color: #ff0000;
+    }
+
+    .card {
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.1);
+    }
+
+
+    @media (max-width: 800px) {
+        body {
+            padding: 0 20px 20px 20px;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+        }
+
+        .tutorial-direccion-image {
+            font-size: 20px;
+        }
+
+        .btn-usuario {
+            margin-left: 0;
+            width: 305px;
+        }
+
+    }
+
+    @media (max-width: 1200px) {
+        body {
+            padding: 0 50px 50px 50px;
+        }
+
+        .form-container input,
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+        }
+
+        .btn-usuario {
+            margin-left: 0;
+            width: 305px;
+        }
+    }
+
+    .btn-manager {
+            display: inline-block;
+            background-color: #28a745; /* Verde */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Elimina el subrayado */
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn-manager:hover {
+            color: #000000;
+            text-decoration: none;
+            background-color: #63bc76; /* Verde más oscuro */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+        }
+
+        .btn-manager:focus {
+            text-decoration: none;
+            outline: none; /* Elimina el borde de enfoque */
+        }
+
+        /* Asegura que no haya subrayado por estilos globales o predeterminados */
+        a {
+            text-decoration: none; /* Elimina el subrayado en todos los enlaces */
+        }
+    /* Estilo del switch */
+</style>
+
+
+
+<body id="content">
+
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 navbar-custom">
+        <div class="container">
+            <a style="padding-left: 20px;" class="navbar-brand" href="#">
+                <img src="https://res.cloudinary.com/dvyenqzki/image/upload/v1727116739/LOGO-VARISTI_eulwve.ico" alt="Logo" width="70" height="70" loading="lazy">
+            </a>
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <b><a class="nav-link" style="color: #ffffff; padding-right: 40px;" href="/">Inicio</a></b>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <div class="text-center titulo" style="color: #000000;">
+        <h1>Bienvenid@, <%= usuario.nombre %>!</h1>
+        <p>Gracias por trabajar con nosotros</p>
+    </div>
+
+
+    <div class=" container mt-5 container-agregar" style="color: #000000;">
+        <h2>GESTIÓN DE CATÁLOGOS</h2>
+        <form action="/agregar-catalogo" method="POST" class="form-container" onsubmit="return validateForm()">
+            <!-- Agregar campo oculto para el nombre de usuario -->
+            <input type="hidden" id="nombreUsuario" name="nombreUsuario" value="<%= usuario.nombre %>">
+
+            <div class="form-group">
+                <label for="marca"><b>CATALOGO</b></label>
+                <select class="form-control" id="marca" name="marca" required>
+                    <option style="display: none;" value="">SELECCIONE UN CATALOGO</option>
+                    <option value="Audifonos">AUDÍFONOS</option>
+                    <option value="Belleza">BELLEZA</option>
+                    <option value="Bombillos">BOMBILLOS</option>
+                    <option value="BolsasViajeras">BOLSAS VIAJERAS</option>
+                    <option value="Calculadoras">CALCULADORAS</option>
+                    <option value="CablesCargadores">CABLES-CARGADORES</option>
+                    <option value="Camaras">CAMARAS</option>
+                    <option value="Campamento">CAMPAMENTO</option>
+                    <option value="Candados">CANDADOS</option>
+                    <option value="Cocina">COCINA</option>
+                    <option value="ControlesTV">CONTROLES TV</option>
+                    <option value="Deporte">DEPORTE</option>
+                    <option value="Exprimidores">EXPRIMIDORES</option>
+                    <option value="Escolar">ESCOLAR</option>
+                    <option value="ExtensionesyMultitomas">EXTENSIONES Y MULTITOMAS</option>
+                    <option value="Ferreteria">FERRETERÍA</option>
+                    <option value="Grameras">GRAMERAS</option>
+                    <option value="HervidoresyCafeteras">HERVIDORES Y CAFETERAS</option>
+                    <option value="Humidificadores">HUMIDIFICADORES</option>
+                    <option value="Impermeables">IMPERMEABLES</option>
+                    <option value="InsumosMedicos">INSUMOS MEDICOS</option>
+                    <option value="Juguetes">JUGUETES</option>
+                    <option value="Lamparas">LAMPARAS</option>
+                    <option value="LamparasInfantiles">LAMPARAS INFANTILES</option>
+                    <option value="Licuadoras">LICUADORAS</option>
+                    <option value="Linternas">LINTERNAS</option>
+                    <option value="MaquinasYpatilleras">MAQUINAS Y PATILLERAS</option>
+                    <option value="Mascotas">MASCOTAS</option>
+                    <option value="Masajeadores">MASAJEADORES</option>
+                    <option value="Memorias">MEMORIAS</option>
+                    <option value="Navidad">NAVIDAD</option>
+                    <option value="OllasArroceras">OLLAS ARROCERAS</option>
+                    <option value="OllasPresion">OLLAS A PRESIÓN</option>
+                    <option value="Organizadores">ORGANIZADORES</option>
+                    <option value="Parlantes">PARLANTES</option>
+                    <option value="Pilas">PILAS</option>
+                    <option value="Picatodos">PICATODOS</option>
+                    <option value="PistolasdeSiliconas">PISTOLAS DE SILICONA</option>
+                    <option value="PlanchasdeRopa">PLANCHAS DE ROPA</option>
+                    <option value="Radios">RADIOS</option>
+                    <option value="Relojes">RELOJES</option>
+                    <option value="Sombrillas">SOMBRILLAS</option>
+                    <option value="Tecnologia">TECNOLOGÍA</option>
+                    <option value="Telefono">TELÉFONO</option>
+                    <option value="Termos">TERMOS</option>
+                    <option value="Veladoras">VELADORAS</option>
+                    <option value="Ventiladores">VENTILADORES</option>
+                    <!-- Añade más opciones aquí según sea necesario -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">NOMBRE</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">DESCRIPCIÓN</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="terminosGarantia">TÉRMINOS DE GARANTÍA</label>
+                <textarea class="form-control" id="terminosGarantia" name="terminosGarantia" rows="3"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="certificacion">ESTADO DE STOCK</label>
+                <select class="form-control" id="certificacion" name="certificacion" required>
+                    <option value="siHay">SI HAY</option>
+                    <option value="noHay">NO HAY</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="precioMayorista">PRECIO MAYORISTA</label>
+                <div class="input-group">
+                    <span class="input-group-text" style="color: #00ff15;">$</span>
+                    <input type="text" class="form-control" id="precioMayorista" name="precioMayorista" 
+                           required title="Ingrese solo números" inputmode="numeric" pattern="[0-9]*" 
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="precioDetal">PRECIO AL DETAL</label>
+                <div class="input-group">
+                    <span class="input-group-text" style="color: #00ff15;">$</span>
+                    <input type="text" class="form-control" id="precioDetal" name="precioDetal" 
+                           required title="Ingrese solo números" inputmode="numeric" pattern="[0-9]*"
+                           oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="imagen" class="form-label">DIRECCIÓN DE LA IMAGEN</label>
+                <input type="text" class="form-control" id="imagen" name="imagen" required oninput="previewImage()">
+                <img style="width: 600px; height: 600px;" id="preview" alt="Previsualización de la imagen"
+                    class="img-fluid mt-2" loading="lazy">
+            </div>
+           
+            
+            <div class="mb-3">
+                <a href="/admin/imagenes" class="btn-manager" target="_blank">Gestor de imágenes</a>
+            </div>
+
+            <button type="submit" class="btn btn-default">AGREGAR PRODUCTO</button>
+        </form>
+
+
+
+
+
+
+
+    </div>
+    <!-- Aquí se agregará el contenido ocultable -->
+    <% if (usuario && usuario.rol==='vendedor' ) { %>
+        <div class="mt-5" id="contentToShow" style="color: #000000;">
+            <h1 class="tutorial-direccion-image">No sabes cómo obtener la dirección de la imagen?</h1>
+            <h6>Te enseñamos cómo hacerlo
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    style="fill: rgb(0, 0, 0);transform: msFilter">
+                    <path
+                        d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z">
+                    </path>
+                    <path
+                        d="M14.828 14.828a3.988 3.988 0 0 1-2.02 1.09 4.108 4.108 0 0 1-1.616 0 4.103 4.103 0 0 1-.749-.232 4.161 4.161 0 0 1-.679-.368 4.115 4.115 0 0 1-1.082-1.082l-1.658 1.117c.215.319.462.619.733.889a5.991 5.991 0 0 0 8.485.002c.272-.271.52-.571.734-.891l-1.658-1.117c-.143.211-.307.41-.49.592z">
+                    </path>
+                    <circle cx="8.5" cy="10.5" r="1.5"></circle>
+                    <path d="M15.5 10c-2 0-2.5 2-2.5 2h5s-.501-2-2.5-2z"></path>
+                </svg>
+                <!-- Botón para ocultar el contenido -->
+                <button id="showContentButton" class="btn btn-default">
+                    Ya sé cómo usarlo
+                </button>
+                <a href="https://imgbb.com/login" class="btn btn-success" target="_blank">Subir Imagen</a>
+            </h6>
+            <iframe id="tutorialVideo" width="560" height="315"
+                src="https://www.youtube.com/embed/gKeEmMXR-vg?si=_w64S1qko3IiYkeU" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <% } %>
+
+        
+        
+            <div class="container">
+                <% if (usuario && usuario.rol==='superadmin' ) { %>
+                    <!-- Botón para mostrar la tabla de usuarios -->
+                    <button id="mostrarUsuariosBtn" class="btn-usuario btn-primary mt-3">Mostrar Usuarios</button>
+                    <% } %>
+
+                        <!-- Tabla de usuarios (inicialmente oculta) -->
+                        <div id="tablaUsuarios" class="mt-3" style="display: none;">
+                            <h3 class="text-center mb-4" style="color: #fff;">Usuarios</h3>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Correo</th>
+                                            <th scope="col">Rol</th>
+                                            <th scope="col">Permiso Eliminar</th>
+                                            <th scope="col">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <% usuarios.forEach((usuario)=> { %>
+                                            <tr>
+                                                <td>
+                                                    <%= usuario.nombre %>
+                                                </td>
+                                                <td>
+                                                    <%= usuario.email %>
+                                                </td>
+                                                <td>
+                                                    <%= usuario.rol %>
+                                                </td>
+                                                <td>
+                                                    <label class="switch">
+                                                        <input type="checkbox"
+                                                            id="permiso_eliminar_switch_<%= usuario.id %>"
+                                                            <%=usuario.permiso_eliminar==='tienePermiso' ? 'checked'
+                                                            : '' %> onchange="togglePermisoEliminar(<%= usuario.id %>,
+                                                            this.checked)">
+                                                            <span class="slider round"></span>
+                                                    </label>
+                                                <td>
+                                                    <form id="cambiarContrasenaForm_<%= usuario.id %>"
+                                                        action="/cambiar-contrasena/<%= usuario.id %>" method="POST">
+                                                        <label for="nuevaContrasena_<%= usuario.id %>">Nueva
+                                                            Contraseña:</label>
+                                                        <input type="password" id="nuevaContrasena_<%= usuario.id %>"
+                                                            name="nuevaContrasena" required>
+                                                        <button type="submit" class="btn btn-primary">Cambiar
+                                                            Contraseña</button>
+                                                    </form>
+                                                    <div class="d-flex justify-content-center">
+                                                        <a href="/editar-usuario/<%= usuario.id %>"
+                                                            class="btn btn-primary mr-2">Editar</a>
+                                                        <form id="delete-form-<%= usuario.id %>"
+                                                            action="/borrar-usuario/<%= usuario.id %>" method="POST">
+                                                            <button type="submit" class="btn btn-danger"
+                                                                onclick="return confirm('¿Estás seguro de que deseas eliminar este usuario?')">Borrar</button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <% }); %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+<div>
+    <form id="backupForm" action="/download-backup" method="get">
+        <button class="btn-usuario btn-primary mt-3" type="submit">Copia de seguridad</button>
+    </form>
+</div>
+
+                        <h3 class="mt-5" style="color: #000000;">CATALOGO AGREGADOS</h3>
+
+                        <div class="container mt-4">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div style="color: #000000;">
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Audifonos" value="Audifonos">
+                                            <label class="form-check-label" for="Audifonos">AUDÍFONOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Belleza"
+                                                value="Belleza">
+                                            <label class="form-check-label" for="Belleza">BELLEZA</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Bombillos" value="Bombillos">
+                                            <label class="form-check-label" for="Bombillos">BOMBILLOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="BolsasViajeras" value="BolsasViajeras">
+                                            <label class="form-check-label" for="BolsasViajeras">BOLSAS VIAJERAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="CablesCargadores" value="CablesCargadores">
+                                            <label class="form-check-label"
+                                                for="CablesCargadores">CABLES-CARGADORES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Calculadoras" value="Calculadoras">
+                                            <label class="form-check-label" for="Calculadoras">CALCULADORAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Camaras"
+                                                value="Camaras">
+                                            <label class="form-check-label" for="Camaras">CAMARAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Campamento"
+                                                value="Campamento">
+                                            <label class="form-check-label" for="Campamento">CAMPAMENTO</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Candados"
+                                                value="Candados">
+                                            <label class="form-check-label" for="Candados">CANDADOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Cocina"
+                                                value="Cocina">
+                                            <label class="form-check-label" for="Cocina">COCINA</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="ControlesTV" value="ControlesTV">
+                                            <label class="form-check-label" for="ControlesTV">CONTROLES TV</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Deporte" value="Deporte">
+                                            <label class="form-check-label" for="Deporte">DEPORTE</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Escolar"
+                                                value="Escolar">
+                                            <label class="form-check-label" for="Escolar">ESCOLAR</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Exprimidores" value="Exprimidores">
+                                            <label class="form-check-label" for="Exprimidores">EXPRIMIDORES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="ExtensionesyMultitomas" value="ExtensionesyMultitomas">
+                                            <label class="form-check-label" for="ExtensionesyMultitomas">EXTENSIONES Y
+                                                MULTITOMAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Ferreteria"
+                                                value="Ferreteria">
+                                            <label class="form-check-label" for="Ferreteria">FERRETERÍA</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Grameras"
+                                                value="Grameras">
+                                            <label class="form-check-label" for="Grameras">GRAMERAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="HervidoresyCafeteras" value="HervidoresyCafeteras">
+                                            <label class="form-check-label" for="HervidoresyCafeteras">HERVIDORES Y
+                                                CAFETERAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Humidificadores" value="Humidificadores">
+                                            <label class="form-check-label"
+                                                for="Humidificadores">HUMIDIFICADORES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Impermeables" value="Impermeables">
+                                            <label class="form-check-label" for="Impermeables">IMPERMEABLES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="InsumosMedicos" value="InsumosMedicos">
+                                            <label class="form-check-label" for="InsumosMedicos">INSUMOS MEDICOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Juguetes"
+                                                value="Juguetes">
+                                            <label class="form-check-label" for="Juguetes">JUGUETES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Lamparas"
+                                                value="Lamparas">
+                                            <label class="form-check-label" for="Lamparas">LAMPARAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="LamparasInfantiles" value="LamparasInfantiles">
+                                            <label class="form-check-label" for="LamparasInfantiles">LAMPARAS
+                                                INFANTILES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Licuadoras" value="Licuadoras">
+                                            <label class="form-check-label" for="Licuadoras">LICUADORAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Linternas" value="Linternas">
+                                            <label class="form-check-label" for="Linternas">LINTERNAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="MaquinasYpatilleras" value="MaquinasYpatilleras">
+                                            <label class="form-check-label" for="MaquinasYpatilleras">MAQUINAS Y
+                                                PATILLERAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Masajeadores" value="Masajeadores">
+                                            <label class="form-check-label" for="Masajeadores">MASAJEADORES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Mascotas"
+                                                value="Mascotas">
+                                            <label class="form-check-label" for="Mascotas">MASCOTAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Memorias"
+                                                value="Memorias">
+                                            <label class="form-check-label" for="Memorias">MEMORIAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Navidad"
+                                                value="Navidad">
+                                            <label class="form-check-label" for="Navidad">NAVIDAD</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="OllasArroceras" value="OllasArroceras">
+                                            <label class="form-check-label" for="OllasArroceras">OLLAS ARROCERAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="OllasPresion" value="OllasPresion">
+                                            <label class="form-check-label" for="OllasPresion">OLLAS A PRESIÓN</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Organizadores" value="Organizadores">
+                                            <label class="form-check-label" for="Organizadores">ORGANIZADORES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Parlantes" value="Parlantes">
+                                            <label class="form-check-label" for="Parlantes">PARLANTES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Pilas"
+                                                value="Pilas">
+                                            <label class="form-check-label" for="Pilas">PILAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Picatodos" value="Picatodos">
+                                            <label class="form-check-label" for="Picatodos">PICATODOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="PistolasdeSiliconas" value="PistolasdeSiliconas">
+                                            <label class="form-check-label" for="PistolasdeSiliconas">PISTOLAS DE
+                                                SILICONA</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="PlanchasdeRopa" value="PlanchasdeRopa">
+                                            <label class="form-check-label" for="PlanchasdeRopa">PLANCHAS DE
+                                                ROPA</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Radios"
+                                                value="Radios">
+                                            <label class="form-check-label" for="Radios">RADIOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Relojes"
+                                                value="Relojes">
+                                            <label class="form-check-label" for="Relojes">RELOJES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Sombrillas" value="Sombrillas">
+                                            <label class="form-check-label" for="Sombrillas">SOMBRILLAS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Tecnologia"
+                                                value="Tecnologia">
+                                            <label class="form-check-label" for="Tecnologia">TECNOLOGÍA</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Telefono"
+                                                value="Telefono">
+                                            <label class="form-check-label" for="Telefono">TELÉFONO</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox" id="Termos"
+                                                value="Termos">
+                                            <label class="form-check-label" for="Termos">TERMOS</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Ventiladores" value="Ventiladores">
+                                            <label class="form-check-label" for="Ventiladores">VENTILADORES</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input marca-checkbox" type="checkbox"
+                                                id="Veladoras" value="Veladoras">
+                                            <label class="form-check-label" for="Veladoras">VELADORAS</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% if (usuario && usuario.rol==='superadmin' ) { %>
+                                    <div class="col-md-4">
+                                        <div class="form-group" style="color: #000000;">
+                                            <label for="filtroCertificacion">FILTRAR POR STOCK:</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input certificacion-checkbox" type="checkbox"
+                                                    id="filtroCertificacion_siHay" value="siHay">
+                                                <label class="form-check-label" for="filtroCertificacion_siHay">SI
+                                                    HAY</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input certificacion-checkbox" type="checkbox"
+                                                    id="filtroCertificacion_noHay" value="noHay">
+                                                <label class="form-check-label" for="filtroCertificacion_noHay">NO
+                                                    HAY</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <!-- <div class="form-group" style="color: #000000;">
+                                            <label for="filtroUsuario">Filtrar por Usuario:</label>
+                                            <% usuarios.forEach((usuario)=> { %>
+                                                <div class="form-check">
+                                                    <input class="form-check-input usuario-checkbox" type="checkbox"
+                                                        id="filtroUsuario_<%= usuario.nombre %>"
+                                                        value="<%= usuario.nombre %>">
+                                                    <label class="form-check-label"
+                                                        for="filtroUsuario_<%= usuario.nombre %>">
+                                                        <%= usuario.nombre %>
+                                                    </label>
+                                                </div>
+                                                <% }); %>
+                                        </div> -->
+                                    </div>
+                                    <% } %>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <input type="text" id="buscador-catalogo" class="form-control" placeholder="Buscar por nombre de catálogo...">
+                            </div>
+                        </div>  
+
+                        <h2 id="contadores" class="mt-5 text-center">
+                            Total en stock: <span id="total-en-stock">0</span><br>
+                            Total sin stock: <span id="total-sin-stock">0</span><br>
+                            Total general: <span id="total-general">0</span>
+                        </h2>
+
+
+                        <div class="container">
+                            <% if (usuario) { %>
+                                <% if (usuario.rol==='superadmin' || usuario.rol==='admin' ) { %>
+                                    <h1 class="mt-5 text-center" style="color: #000000;">✅ EN STOCK ✅</h1>
+                                    <div class="row mt-3" id="catalogos-en-stock">
+                                        <% for (let i = catalogos.length - 1; i >= 0; i--) { %>
+                                            <% let catalogo = catalogos[i]; %>
+                                            <% if (catalogo.certificacion==='siHay' ) { %>
+                                                <div class="col-md-4 mb-4 catalogo"
+                                                    data-marca="<%= catalogo.catalogo %>"
+                                                    data-certificacion="<%= catalogo.certificacion %>"
+                                                    data-nombre="<%= catalogo.nombre %>"
+                                                    data-usuario-agrego="<%= catalogo.usuario_nombre %>">
+                                                    <div class="card">
+                                                        <img src="<%= catalogo.imagen %>" class="card-img-top" alt="..." loading="lazy">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">
+                                                                <%= catalogo.catalogo %> - <%= catalogo.nombre %>
+                                                            </h5>
+                                                            <p class="card-text descripcion">
+                                                                <%= catalogo.descripcion %>
+                                                            </p>
+                                                            <p class="card-text terminos-garantia"><strong>Términos de Garantía:</strong>
+                                                                <%= catalogo.terminos_garantia %>
+                                                            </p>
+                                                            <b>
+                                                                <p class="card-text">Precio Mayorista: $<%= catalogo.precio_mayorista.toLocaleString('es-CO') %> COP<br>Precio Detal: $<%= catalogo.precio_detal.toLocaleString('es-CO') %> COP</p>
+                                                            </b>
+                                                            <p class="card-text">Agregado por: <b><%= usuario.nombre %></b></p>
+                                                            <p class="card-text">Certificación: <b><%= catalogo.certificacion %></b></p>
+                                                            <div class="d-flex align-items-center">
+                                                                <a href="/editar-catalogo/<%= catalogo.id %>" class="btn btn-primary mr-3">Editar</a>
+                        
+                                                                <!-- Verificación del permiso de eliminar -->
+                                                                <% var tienePermisoEliminar = false; %>
+                                                                <% usuarios.forEach(function(usuarioTabla) { %>
+                                                                    <% if (usuarioTabla.nombre === usuario.nombre && usuarioTabla.permiso_eliminar === 'tienePermiso') { %>
+                                                                        <% tienePermisoEliminar = true; %>
+                                                                    <% } %>
+                                                                <% }); %>
+                        
+                                                                <% if (tienePermisoEliminar) { %>
+                                                                    <form id="delete-form-<%= catalogo.id %>" action="/borrar-catalogo/<%= catalogo.id %>" method="POST" class="d-inline">
+                                                                        <button type="button" class="btn btn-danger" onclick="confirmDeletion('<%= catalogo.id %>')">Borrar</button>
+                                                                    </form>
+                                                                <% } %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                        
+                                    <h1 class="mt-5 text-center" style="color: #000000;"> ❌ SIN STOCK ❌</h1>
+                                    <div class="row mt-3" id="catalogos-sin-stock">
+                                        <% for (let i = catalogos.length - 1; i >= 0; i--) { %>
+                                            <% let catalogo = catalogos[i]; %>
+                                            <% if (catalogo.certificacion==='noHay' ) { %>
+                                                <div class="col-md-4 mb-4 catalogo"
+                                                    data-marca="<%= catalogo.catalogo %>"
+                                                    data-certificacion="<%= catalogo.certificacion %>"
+                                                    data-nombre="<%= catalogo.nombre %>"
+                                                    data-usuario-agrego="<%= catalogo.usuario_nombre %>">
+                                                    <div class="card">
+                                                        <img src="<%= catalogo.imagen %>" class="card-img-top" alt="..." loading="lazy">
+                                                        <div class="card-body">
+                                                            <h5 class="card-title">
+                                                                <%= catalogo.catalogo %> - <%= catalogo.nombre %>
+                                                            </h5>
+                                                            <p class="card-text descripcion">
+                                                                <%= catalogo.descripcion %>
+                                                            </p>
+                                                            <p class="card-text terminos-garantia"><strong>Términos de Garantía:</strong>
+                                                                <%= catalogo.terminos_garantia %>
+                                                            </p>
+                                                            <b>
+                                                                <p class="card-text">Precio Mayorista: $<%= catalogo.precio_mayorista.toLocaleString('es-CO') %> COP<br>Precio Detal: $<%= catalogo.precio_detal.toLocaleString('es-CO') %> COP</p>
+                                                            </b>
+                                                            <p class="card-text">Agregado por: <b><%= usuario.nombre %></b></p>
+                                                            <p class="card-text">Certificación: <b><%= catalogo.certificacion %></b></p>
+                                                            <div class="d-flex align-items-center">
+                                                                <a href="/editar-catalogo/<%= catalogo.id %>" class="btn btn-primary mr-3">Editar</a>
+                        
+                                                                <!-- Verificación del permiso de eliminar -->
+                                                                <% var tienePermisoEliminar = false; %>
+                                                                <% usuarios.forEach(function(usuarioTabla) { %>
+                                                                    <% if (usuarioTabla.nombre === usuario.nombre && usuarioTabla.permiso_eliminar === 'tienePermiso') { %>
+                                                                        <% tienePermisoEliminar = true; %>
+                                                                    <% } %>
+                                                                <% }); %>
+                        
+                                                                <% if (tienePermisoEliminar) { %>
+                                                                    <form id="delete-form-<%= catalogo.id %>" action="/borrar-catalogo/<%= catalogo.id %>" method="POST" class="d-inline">
+                                                                        <button type="button" class="btn btn-danger" onclick="confirmDeletion('<%= catalogo.id %>')">Borrar</button>
+                                                                    </form>
+                                                                <% } %>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                <% } %>
+                            <% } else { %>
+                                <p>No se ha iniciado sesión.</p>
+                            <% } %>
+                        </div>
+                        
+
+
+
+            </div>
+            </div>
+            
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Obtener el número de elementos en stock
+        const catalogosEnStock = document.querySelectorAll('#catalogos-en-stock .catalogo').length;
+        const catalogosSinStock = document.querySelectorAll('#catalogos-sin-stock .catalogo').length;
+        const totalGeneral = catalogosEnStock + catalogosSinStock;
+    
+        // Mostrar los conteos en los elementos correspondientes
+        document.getElementById('total-en-stock').textContent = catalogosEnStock;
+        document.getElementById('total-sin-stock').textContent = catalogosSinStock;
+        document.getElementById('total-general').textContent = totalGeneral;
+    });
+    </script>
+    
+<script>
+    function togglePermisoEliminar(userId, isChecked) {
+        fetch(`/cambiar-permiso/${userId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ permiso_eliminar: isChecked ? 'tienePermiso' : 'noTienePermiso' })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    console.log('Permiso de eliminación actualizado exitosamente.');
+                } else {
+                    console.error('Error al actualizar el permiso de eliminación.');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+
+
+
+
+<script>
+    function validateInput(input) {
+        var forbiddenChars = /[^a-zA-Z\s]/g;
+        var errorMessage = document.getElementById('error-message');
+        if (forbiddenChars.test(input.value)) {
+            errorMessage.style.display = 'block';
+        } else {
+            errorMessage.style.display = 'none';
+        }
+    }
+
+    function validateForm() {
+        var forbiddenChars = /[^a-zA-Z\s]/g;
+        var input = document.getElementById('catalogo');
+        var errorMessage = document.getElementById('error-message');
+        if (forbiddenChars.test(input.value)) {
+            errorMessage.style.display = 'block';
+            // Desplazar la página hasta el principio del formulario
+            window.scrollTo(180, 180);
+            return false; // Evitar que se envíe el formulario
+        } else {
+            errorMessage.style.display = 'none';
+            return true; // Permitir que se envíe el formulario
+        }
+    }
+</script>
+
+
+
+
+<script>
+    // Manejar el cambio en los checkboxes de marca
+    document.querySelectorAll('.marca-checkbox').forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            filtrarcatalogos();
+        });
+    });
+
+    // Manejar el cambio en los checkboxes de certificación
+    document.querySelectorAll('.certificacion-checkbox').forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            filtrarcatalogos();
+        });
+    });
+
+    // Manejar el cambio en los checkboxes de usuario
+    document.querySelectorAll('.usuario-checkbox').forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            filtrarcatalogos();
+        });
+    });
+
+    // Función para filtrar los vehículos
+    function filtrarcatalogos() {
+        // Obtener las marcas seleccionadas
+        var marcasSeleccionadas = [];
+        document.querySelectorAll('.marca-checkbox:checked').forEach(function (checkbox) {
+            marcasSeleccionadas.push(checkbox.value);
+        });
+
+        // Obtener las certificaciones seleccionadas
+        var certificacionesSeleccionadas = [];
+        document.querySelectorAll('.certificacion-checkbox:checked').forEach(function (checkbox) {
+            certificacionesSeleccionadas.push(checkbox.value);
+        });
+
+        // Obtener los usuarios seleccionados
+        var usuariosSeleccionados = [];
+        document.querySelectorAll('.usuario-checkbox:checked').forEach(function (checkbox) {
+            usuariosSeleccionados.push(checkbox.value);
+        });
+
+        // Mostrar/ocultar los divs de los vehículos según los filtros seleccionados
+        document.querySelectorAll('.catalogo').forEach(function (catalogo) {
+            var marca = catalogo.getAttribute('data-marca');
+            var certificacion = catalogo.getAttribute('data-certificacion');
+            var usuario = catalogo.getAttribute('data-usuario-agrego');
+
+            var mostrar = true;
+
+            // Filtrar por marca
+            if (marcasSeleccionadas.length > 0 && !marcasSeleccionadas.includes(marca)) {
+                mostrar = false;
+            }
+
+            // Filtrar por certificación
+            if (certificacionesSeleccionadas.length > 0 && !certificacionesSeleccionadas.includes(certificacion)) {
+                mostrar = false;
+            }
+
+            // Filtrar por usuario
+            if (usuariosSeleccionados.length > 0 && !usuariosSeleccionados.includes(usuario)) {
+                mostrar = false;
+            }
+
+            if (mostrar) {
+                catalogo.style.display = 'block';
+            } else {
+                catalogo.style.display = 'none';
+            }
+        });
+    }
+
+    // Filtrar vehículos al cargar la página
+    window.addEventListener('load', function () {
+        filtrarcatalogos();
+    });
+</script>
+
+<script>
+    // Manejar el cambio en el select de usuario
+    document.getElementById('filtroUsuario').addEventListener('change', actualizarFiltro);
+
+    // Función para actualizar el filtro
+    function actualizarFiltro() {
+        var usuarioSeleccionado = document.getElementById('filtroUsuario').value;
+
+        // Mostrar/ocultar los divs de los vehículos según el usuario seleccionado
+        document.querySelectorAll('.catalogo').forEach(function (catalogo) {
+            var usuarioAgrego = catalogo.getAttribute('data-usuario-agrego');
+
+            if (usuarioSeleccionado === 'todos' || usuarioAgrego === usuarioSeleccionado) {
+                catalogo.style.display = 'block';
+            } else {
+                catalogo.style.display = 'none';
+            }
+        });
+    }
+</script>
+
+<script>
+    document.getElementById('mostrarUsuariosBtn').addEventListener('click', function () {
+        var tablaUsuarios = document.getElementById('tablaUsuarios');
+        if (tablaUsuarios.style.display === 'none') {
+            tablaUsuarios.style.display = 'block';
+        } else {
+            tablaUsuarios.style.display = 'none';
+        }
+    });
+</script>
+
+<!-- JavaScript para ocultar el contenido -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Verificar si el botón ya ha sido presionado anteriormente
+        var hasPressedButton = localStorage.getItem('pressedButton');
+        if (hasPressedButton) {
+            document.getElementById('contentToShow').classList.add('d-none');
+            document.getElementById('tutorialVideo').classList.add('d-none');
+            document.getElementById('showContentButton').classList.add('d-none');
+        }
+    });
+
+    document.getElementById('showContentButton').addEventListener('click', function () {
+        var confirmation = confirm("¿Estás seguro de que ya sabes cómo usarlo? Esta información no volverá a mostrarse.");
+
+        if (confirmation) {
+            localStorage.setItem('pressedButton', true); // Guardar en el almacenamiento local que el botón ha sido presionado
+            document.getElementById('contentToShow').classList.add('d-none');
+            document.getElementById('tutorialVideo').classList.add('d-none');
+            document.getElementById('showContentButton').classList.add('d-none');
+        }
+    });
+</script>
+
+<script>
+    // Obtener el campo de entrada y la imagen de previsualización
+    const inputImagen = document.getElementById('imagen');
+    const imagenPreview = document.getElementById('preview');
+
+    // Agregar un evento de cambio al campo de entrada
+    inputImagen.addEventListener('input', () => {
+        // Obtener el valor del campo de entrada
+        const imageUrl = inputImagen.value;
+
+        // Actualizar la fuente de la imagen de previsualización con la URL ingresada
+        imagenPreview.src = imageUrl;
+    });
+</script>
+
+<script>
+    let lastScrollTop = 0;
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScrollTop) {
+            // Descendiendo
+            document.getElementById("navbar").classList.add("navbar-hidden");
+        } else {
+            // Ascendiendo
+            document.getElementById("navbar").classList.remove("navbar-hidden");
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    }, false);
+</script>
+
+<script>
+// Función para eliminar acentos (tildes) de un texto
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+}
+
+// Función de búsqueda
+document.getElementById('buscador-catalogo').addEventListener('input', function() {
+    const searchTerm = removerAcentos(this.value.toLowerCase());  // Eliminar acentos del término de búsqueda
+    const searchWords = searchTerm.split(" ").filter(word => word);  // Dividir en palabras el término de búsqueda
+    const catalogos = document.querySelectorAll('.catalogo');
+    let visibleCatalogos = 0;
+
+    catalogos.forEach(catalogo => {
+        const catalogoNombre = removerAcentos(catalogo.getAttribute('data-nombre').toLowerCase());  // Eliminar acentos del nombre
+        const catalogoMarca = removerAcentos(catalogo.getAttribute('data-marca').toLowerCase());    // Eliminar acentos de la marca
+
+        // Verificar si todas las palabras del término de búsqueda están en el nombre o la marca del catálogo
+        const allWordsMatch = searchWords.every(word => catalogoNombre.includes(word) || catalogoMarca.includes(word));
+
+        if (allWordsMatch) {
+            catalogo.style.display = '';
+            visibleCatalogos++;
+        } else {
+            catalogo.style.display = 'none';
+        }
+    });
+
+    // Actualiza el contador de catálogos visibles
+    document.getElementById('catalogoCount').textContent = visibleCatalogos;
+});
+
+// Función para confirmar la eliminación de un catálogo
+function confirmDeletion(id) {
+    if (confirm("¿Estás seguro de que deseas eliminar este catálogo?")) {
+        document.getElementById(`delete-form-${id}`).submit();
+    }
+}
+</script>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+        } else {
+            document.getElementById("navbar").style.top = "-54px"; /* Ajusta esto según la altura de tu barra de navegación */
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Script para manejar la confirmación de eliminación -->
+<script>
+    function confirmDeletion(catalogoId) {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: '¿Estás seguro de que deseas eliminar este producto?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Sí, eliminar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: '¿Completamente seguro?',
+                    text: 'Esta acción no se puede deshacer. ¿Deseas continuar?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Sí, estoy seguro',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        fetch(`/borrar-catalogo/${catalogoId}`, {
+                            method: 'POST'
+                        })
+                            .then(response => {
+                                if (response.ok) {
+                                    Swal.fire('¡Producto eliminado!', 'El producto ha sido eliminado correctamente', 'success')
+                                        .then(() => {
+                                            window.location.href = '/catalogo'; // Redirigir a la página de catálogo después de borrar
+                                        });
+                                } else {
+                                    throw new Error('Error al intentar eliminar el producto');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error al intentar eliminar el producto:', error);
+                                Swal.fire('¡Error!', 'Hubo un error al intentar eliminar el producto', 'error')
+                                    .then(() => {
+                                        window.location.href = '/catalogo'; // Redirigir a la página de catálogo en caso de error
+                                    });
+                            });
+                    } else {
+                        window.location.href = '/catalogo'; // Redirigir a la página de catálogo si el usuario cancela
+                    }
+                });
+            } else {
+                window.location.href = '/catalogo'; // Redirigir a la página de catálogo si el usuario cancela
+            }
+        });
+    }
+</script>
+
+<script>
+function formatearNumero(input) {
+    let valor = input.value;
+
+    // Eliminar todas las comas
+    valor = valor.replace(/,/g, '');
+
+    // Si el valor está vacío o no es un número, no hacer nada
+    if (!valor || isNaN(valor)) {
+        return;
+    }
+
+    // Formatear el número con comas
+    input.value = parseFloat(valor).toLocaleString('en-US', { minimumFractionDigits: 0 });
+}
+
+function quitarComas(input) {
+    let valor = input.value;
+
+    // Si el valor está vacío, no hacer nada
+    if (!valor) {
+        return;
+    }
+
+    // Eliminar comas para almacenar el número correctamente
+    input.value = valor.replace(/,/g, '');
+}
+</script>
+
+                        
+<script>
+    document.getElementById('backupForm').addEventListener('submit', function(e) {
+        // Evitar el envío del formulario hasta que se confirme
+        e.preventDefault();
+        
+        // Mostrar SweetAlert2
+        Swal.fire({
+            title: 'Copia de seguridad',
+            text: 'Se va a crear la copia de seguridad, por favor ten paciencia.',
+            icon: 'info',
+            showCancelButton: true, // Opción para cancelar
+            confirmButtonText: 'Aceptar',
+            cancelButtonText: 'Cancelar', // Texto del botón de cancelar
+            allowOutsideClick: false, // Evitar que se cierre al hacer clic fuera
+            onOpen: () => {
+                // Puedes agregar un spinner o animación aquí si lo deseas
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Al hacer clic en "Aceptar", se envía el formulario
+                e.target.submit(); // Enviar el formulario
+            } else if (result.isDismissed) {
+                // Puedes manejar la lógica si el usuario cancela, si es necesario
+                console.log('La acción de copia de seguridad ha sido cancelada.');
+            }
+        });
+    });
+    </script>
+
+
+
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</html>

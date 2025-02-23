@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <link rel="shortcut icon" href="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .upload-form {
+            margin-bottom: 20px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .upload-form label {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .upload-form input[type="file"] {
+            display: none;
+        }
+        .upload-form .file-label {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        .upload-form .file-label:hover {
+            background-color: #45a049;
+        }
+        .upload-form .file-name {
+            margin: 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+        .upload-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .upload-form button:hover {
+            background-color: #45a049;
+        }
+        .search-bar {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .search-bar input {
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            width: 100%;
+            max-width: 300px;
+            font-size: 16px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px;
+        }
+        .image-container {
+            position: relative;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .image-details {
+            padding: 10px;
+            text-align: center;
+            background: #f9f9f9;
+        }
+        .image-details button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        .image-details button:hover {
+            background-color: #c0392b;
+        }
+        .image-details .copy-url {
+            background-color: #3498db;
+        }
+        .image-details .copy-url:hover {
+            background-color: #2980b9;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 500px;
+            width: 100%;
+        }
+        .modal-content img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .modal-content button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        .modal-content button:hover {
+            background-color: #c0392b;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Estilos para la animación de carga */
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn-manager {
+            margin-top: 50px;
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-manager:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-manager:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0));
+    transition: width 0.3s, height 0.3s;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.btn-manager:hover:before {
+    width: 0;
+    height: 0;
+}
+
+.btn-manager span {
+    position: relative;
+    z-index: 1;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Galería de Imágenes</h1>
+    </header>
+    <div class="container">
+        <!-- Formulario de carga de imágenes -->
+        <div class="upload-form">
+            <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data" class="form-container">
+                <label for="images">Subir Imágenes al Catálogo:</label>
+                <input type="file" name="images" id="images" required>
+                <label for="images" class="file-label">Seleccionar Imagen</label>
+                <div id="fileName" class="file-name">Ningún archivo seleccionado</div>
+                <button type="submit">Subir Imágenes</button>
+            </form>
+            <div class="mb-3">
+                <a href="/download-images" class="btn-manager">Descargar Todas las Imágenes</a>
+            </div>
+        </div>
+
+        <!-- Buscador de imágenes -->
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Buscar imágenes por nombre...">
+        </div>
+
+        <!-- Contador de imágenes -->
+        <div class="image-counter">
+            <p>Total de Imágenes: <span id="imageCount"><%= images.length %></span></p>
+        </div>
+
+        <!-- Galería de imágenes -->
+        <div class="gallery" id="gallery">
+            <% images.forEach(({ image, details }) => { %>
+                <div class="image-container">
+                    <img src="/imagenes/<%= image %>" alt="<%= details ? details.name : image %>">
+                    <div class="image-details">
+                        <p>Nombre: <%= details ? details.name : 'N/A' %></p>
+                        <p>Tamaño: <%= details ? details.size : 'N/A' %> KB</p>
+                        <p>Fecha: <%= details ? new Date(details.uploadDate).toLocaleString() : 'N/A' %></p>
+                        <p>Formato: <%= details ? details.format : 'N/A' %></p>
+                        <div class="image-actions">
+                            <button class="copy-url" onclick="copyURL('<%= details.url %>')">Copiar URL</button>
+                            <button onclick="deleteImage('<%= image %>')">Eliminar Imagen</button>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+
+    <script>
+// Función para eliminar acentos (tildes) y caracteres extra
+function removerAcentos(texto) {
+    return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
+}
+
+// Función de búsqueda avanzada (no necesita palabras consecutivas)
+document.getElementById('searchInput').addEventListener('input', function() {
+    const searchTerm = removerAcentos(this.value.toLowerCase());  // Eliminar acentos del término de búsqueda
+    const searchWords = searchTerm.split(" ").filter(word => word);  // Dividir en palabras el término de búsqueda
+    const images = document.querySelectorAll('.image-container');
+    let visibleImages = 0;
+
+    images.forEach(image => {
+        const imageName = removerAcentos(image.querySelector('.image-details p').textContent.toLowerCase());
+        
+        // Verificar si todas las palabras del término de búsqueda están en el nombre de la imagen
+        const allWordsMatch = searchWords.every(word => imageName.includes(word));
+
+        if (allWordsMatch) {
+            image.style.display = '';
+            visibleImages++;
+        } else {
+            image.style.display = 'none';
+        }
+    });
+
+    // Actualiza el contador de imágenes visibles
+    document.getElementById('imageCount').textContent = visibleImages;
+});
+   </script>
+
+    <!-- Scripts -->
+    <script>
+        // Función para copiar la URL de la imagen al portapapeles
+        function copyURL(url) {
+            navigator.clipboard.writeText(window.location.origin + url)
+                .then(() => {
+                    Swal.fire('¡Copiado!', 'La URL de la imagen ha sido copiada al portapapeles.', 'success');
+                })
+                .catch(err => {
+                    console.error('Error al copiar la URL:', err);
+                    Swal.fire('Error', 'No se pudo copiar la URL.', 'error');
+                });
+        }
+
+        // Función para eliminar una imagen
+        function deleteImage(imageName) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "No podrás revertir esta acción.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Sí, eliminarla',
+                cancelButtonText: 'Cancelar'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        const response = await fetch('/delete-image', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ imageName })
+                        });
+
+                        if (response.ok) {
+                            Swal.fire('¡Eliminada!', 'La imagen ha sido eliminada.', 'success')
+                                .then(() => window.location.reload());
+                        } else {
+                            Swal.fire('Error', 'No se pudo eliminar la imagen.', 'error');
+                        }
+                    } catch (err) {
+                        console.error('Error al eliminar la imagen:', err);
+                        Swal.fire('Error', 'No se pudo eliminar la imagen.', 'error');
+                    }
+                }
+            });
+        }
+
+        document.getElementById('images').addEventListener('change', function() {
+    const fileName = this.files.length > 0 ? Array.from(this.files).map(file => file.name).join(', ') : 'Ningún archivo seleccionado';
+    document.getElementById('fileName').textContent = fileName;
+});
+
+document.getElementById('uploadForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const submitButton = this.querySelector('button[type="submit"]');
+    submitButton.disabled = true;
+    submitButton.innerHTML = '<div class="spinner"></div> Subiendo...';
+
+    const formData = new FormData(this);
+
+    try {
+        const response = await fetch(this.action, {
+            method: 'POST',
+            body: formData,
+            credentials: 'include' // Asegúrate de que las cookies de sesión se envíen
+        });
+
+        const resultText = await response.text(); // Obtiene la respuesta en texto plano
+
+        if (response.status === 409) {
+            const { isConfirmed } = await Swal.fire({
+                title: 'El archivo ya existe',
+                text:"\n¿Quieres reemplazar la imagen existente o cambiar el nombre del archivo?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Reemplazar',
+                cancelButtonText: 'Cambiar nombre'
+            });
+
+            if (isConfirmed) {
+                const replaceResponse = await fetch('/replace', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'include'
+                });
+
+                const replaceText = await replaceResponse.text();
+                if (replaceResponse.ok) {
+                    Swal.fire('¡Reemplazada!', replaceText, 'success')
+                        .then(() => window.location.reload());
+                } else {
+                    Swal.fire('Error', 'No se pudo reemplazar la imagen.', 'error');
+                }
+            } else {
+                Swal.fire('Cancelado', 'Cambia el nombre de la imagen y vuelve a intentarlo.', 'info');
+            }
+        } else {
+            Swal.fire('¡Se subio la imagen!', resultText, 'success')
+                .then(() => window.location.reload());
+        }
+    } catch (err) {
+        console.error('Error al subir la imagen:', err);
+        Swal.fire('Error', 'No se pudo subir la imagen.', 'error');
+    } finally {
+        submitButton.disabled = false;
+        submitButton.innerHTML = 'Subir Imágenes';
+    }
+});
+    
+</script>
+
+</body>
+</html>

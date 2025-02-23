@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarse</title>
+    <link rel="shortcut icon" href="https://i.ibb.co/tLnJrKD/pixelcut-export-1.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-X07XGLGN51"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-X07XGLGN51');
+</script>
+    <style>
+        html {
+            zoom: 0.8;
+        }
+
+        body,
+        html {
+            background: rgb(37, 205, 130);
+            background: linear-gradient(0deg, rgba(37, 205, 130, 1) 0%, rgba(184, 220, 192, 1) 42%, rgba(220, 238, 222, 1) 100%);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            padding: 20px;
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(0.88);
+            font-family: "Roboto Slab", serif;
+            font-weight: 800;
+            font-style: normal;
+        }
+
+        .form-container {
+            background: #ffffff;
+            width: 25rem;
+            font-family: 'Nunito', sans-serif;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 14px 14px 20px #160115, -14px -14px 20px #160115;
+            margin-right: 560px;
+        }
+
+        @media (max-width: 800px) {
+            .form-container {
+                margin-right: 0;
+                /* Elimina el margen derecho cuando el ancho de la ventana sea menor que 800px */
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .form-container {
+                margin-right: 20px;
+                /* Ajusta el margen derecho para tablet */
+            }
+        }
+
+        .form-container .title {
+            color: #140314;
+            font-size: 25px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+            margin: 0 0 10px 0;
+        }
+
+        .form-container .form-horizontal .form-group {
+            margin: 0 0 25px 0;
+        }
+
+        .form-container .form-horizontal .form-group label {
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin: 2px;
+        }
+
+        .form-container .form-horizontal .form-control {
+            color: #333;
+            background: #ecf0f3;
+            font-size: 15px;
+            height: 50px;
+            padding: 20px;
+            letter-spacing: 1px;
+            border: none;
+            border-radius: 50px;
+            box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+            display: inline-block;
+            transition: all 0.3s ease 0s;
+        }
+
+        .form-container .form-horizontal .form-control:focus {
+            box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px #fff;
+            outline: none;
+        }
+
+        .form-container .form-horizontal .form-control::placeholder {
+            color: #808080;
+            font-size: 14px;
+        }
+
+        .form-container .form-horizontal .btn {
+            color: #ffffff;
+            background-color: #160115;
+            font-size: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            width: 100%;
+            padding: 12px 15px 11px;
+            border-radius: 20px;
+            box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px #fff;
+            border: none;
+            transition: all 0.5s ease 0s;
+        }
+
+        .form-container .form-horizontal .btn:hover,
+        .form-container .form-horizontal .btn:focus {
+            color: #fff;
+            letter-spacing: 3px;
+            box-shadow: none;
+            outline: none;
+        }
+
+        /* Estilo personalizado para el checkbox */
+        .form-check-input[type="checkbox"] {
+            -webkit-appearance: none;
+            /* Deshabilita la apariencia predeterminada de WebKit (Chrome, Safari) */
+            -moz-appearance: none;
+            /* Deshabilita la apariencia predeterminada de Mozilla Firefox */
+            appearance: none;
+            /* Deshabilita la apariencia predeterminada de otros navegadores */
+            width: 16px;
+            /* Ancho y altura del checkbox personalizado */
+            height: 16px;
+            border: 2px solid #140314;
+            /* Borde negro */
+            border-radius: 3px;
+            /* Bordes redondeados */
+            outline: none;
+            /* Elimina el contorno predeterminado */
+            cursor: pointer;
+            /* Cambia el cursor al pasar sobre el checkbox */
+            vertical-align: middle;
+            /* Alinea verticalmente el checkbox con el texto */
+        }
+
+        /* Estilo del checkbox cuando está marcado */
+        .form-check-input[type="checkbox"]:checked {
+            background-color: green;
+            /* Cambia el fondo del checkbox a verde */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="form-container">
+                        <h3 class="title">Registrar</h3>
+                        <form class="form-horizontal" action="/registro" method="POST">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingrese su nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese su correo electrónico" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contraseña">Contraseña</label>
+                                <div class="input-group">
+                                    <input type="password" class="form-control" id="contraseña" name="contraseña" placeholder="Ingrese su contraseña" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                            <i class="bi bi-eye" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rol">Rol</label>
+                                <select class="form-control" style="height: 65px;" id="rol" name="rol" required>
+                                    <option value="default" hidden>Seleccione un rol</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="superadmin">SuperAdmin</option>
+                                    <option value="vendedor">Vendedor</option>
+                                </select>
+                            </div>
+                            <div id="contraseñaAdmin" class="form-group" style="display: none;">
+                                <label for="passwordAdmin">Contraseña de Administrador</label>
+                                <input type="password" class="form-control" id="passwordAdmin" name="passwordAdmin" placeholder="Ingrese la contraseña de administrador">
+                            </div>
+                            <div id="contraseñaSuperAdmin" class="form-group" style="display: none;">
+                                <label for="passwordSuperAdmin">Contraseña de SuperAdmin</label>
+                                <input type="password" class="form-control" id="passwordSuperAdmin" name="passwordSuperAdmin" placeholder="Ingrese la contraseña de SuperAdmin">
+                            </div>
+                            <div id="montoVendedor" class="form-group" style="display: none;">
+                                <label for="montoVendedorInput">Monto a pagar para ser vendedor $500000</label>
+                                <input type="number" class="form-control" id="montoVendedorInput" name="montoVendedorInput" placeholder="Ingrese el monto a pagar">
+                            </div>
+                            <div class="form-group form-check">
+                                <input type="checkbox" class="form-check-input" id="aceptarTerminos" style="border-color: #140314;" required>
+                                <label class="form-check-label" for="aceptarTerminos" style="font-size: 15px;">Acepto los <a href="https://publuu.com/flip-book/448547/1011621" target="_blank">Términos y Condiciones de Uso</a></label>
+                            </div>
+                            <button type="submit" class="btn btn-default">Registrarse</button>
+                        </form>
+                        <p class="mt-3">¿Ya tienes una cuenta? <a href="/inicio-sesion">Iniciar Sesión</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('rol').addEventListener('change', function () {
+            var rolSeleccionado = this.value;
+            if (rolSeleccionado === 'admin') {
+                document.getElementById('contraseñaAdmin').style.display = 'block';
+                document.getElementById('contraseñaSuperAdmin').style.display = 'none';
+                document.getElementById('montoVendedor').style.display = 'none';
+            } else if (rolSeleccionado === 'superadmin') {
+                document.getElementById('contraseñaAdmin').style.display = 'none';
+                document.getElementById('contraseñaSuperAdmin').style.display = 'block';
+                document.getElementById('montoVendedor').style.display = 'none';
+            } else if (rolSeleccionado === 'vendedor') {
+                document.getElementById('contraseñaAdmin').style.display = 'none';
+                document.getElementById('contraseñaSuperAdmin').style.display = 'none';
+                document.getElementById('montoVendedor').style.display = 'block';
+            } else {
+                document.getElementById('contraseñaAdmin').style.display = 'none';
+                document.getElementById('contraseñaSuperAdmin').style.display = 'none';
+                document.getElementById('montoVendedor').style.display = 'none';
+            }
+        });
+
+        document.getElementById('togglePassword').addEventListener('click', function () {
+            const contraseñaInput = document.getElementById('contraseña');
+            const tipo = contraseñaInput.getAttribute('type') === 'password' ? 'text' : 'password';
+            contraseñaInput.setAttribute('type', tipo);
+            // Cambiar el icono del botón
+            this.querySelector('i').classList.toggle('bi-eye');
+            this.querySelector('i').classList.toggle('bi-eye-slash');
+        });
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

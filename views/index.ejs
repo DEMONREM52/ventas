@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Bodega mayorista. Ventas al por mayor y al detal, artículos para el hogar y cacharrería en general">
+    <meta name="keywords"
+        content="catalogo, belleza, secadores, cepillo secador, hogar, deporte, armarios, baño, organizadores, freidoras de aire, radios, teléfonos, lamparas, lamparas infantiles, ventiladores, bombillos, camaras, camaras inteligentes, relojes, reloj, reloj de pared, reloj de mesa, smartwatch, microondas, patilleras, máquinas de motilar, coser">
+    <title>El Hueco en tu casa - inicio</title>
+    <link rel="shortcut icon"
+        href="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X07XGLGN51"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-X07XGLGN51');
+    </script>
+</head>
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+    html {
+        zoom: 0.8;
+    }
+
+    body {
+        font-family: "Roboto Slab", serif;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        background: rgb(4, 125, 128);
+        background: linear-gradient(0deg, rgb(4, 125, 128) 0%, rgb(145, 253, 255) 42%, rgb(219, 254, 255) 100%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center;
+        width: 100%;
+        max-width: auto;
+        color: #000000;
+    }
+
+
+
+
+    a {
+        font-size: large;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: none;
+        /* Elimina el subrayado predeterminado */
+    }
+
+    /* Color of the links BEFORE scroll */
+    .navbar-scroll .nav-link,
+    .navbar-scroll .navbar-toggler-icon,
+    .navbar-scroll .navbar-brand {
+        color: #000000;
+    }
+
+    /* Color of the links AFTER scroll */
+    .navbar-scrolled .nav-link,
+    .navbar-scrolled .navbar-toggler-icon,
+    .navbar-scrolled .navbar-brand {
+        color: #000000;
+    }
+
+    /* Color of the navbar AFTER scroll */
+    .navbar-scroll,
+    .navbar-scrolled {
+        background-color: #000000;
+    }
+
+    .mask-custom {
+        backdrop-filter: blur(5px);
+        background-color: rgba(255, 255, 255, .15);
+    }
+
+    .navbar-brand {
+        font-size: 1.75rem;
+        letter-spacing: 3px;
+    }
+
+    .navbar-custom {
+        background-color: #b4d5ff93;
+        /* Color de fondo original */
+    }
+
+    #navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: rgb(255, 255, 255);
+        padding: 10px 0;
+        transition: top 0.3s;
+        z-index: 1000;
+    }
+
+    #content {
+        padding-top: 50px;
+        /* Ajusta esto según la altura de tu barra de navegación */
+    }
+
+    .card {
+        background-color: #ebebeba6;
+        border-style: solid 1px;
+        border-color: #000000;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        height: 100%;
+        overflow-y: auto;
+        z-index: 1;
+        transform: translateY(-100%);
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        opacity: 0;
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Personalizar la barra de desplazamiento */
+    .dropdown-content::-webkit-scrollbar {
+        width: 10px;
+        /* Ancho de la barra de desplazamiento */
+    }
+
+    /* Estilo de la barra de desplazamiento */
+    .dropdown-content::-webkit-scrollbar-thumb {
+        background-color: #888;
+        /* Color de fondo de la barra */
+        border-radius: 5px;
+        /* Borde redondeado */
+    }
+
+    /* Estilo del riel de la barra de desplazamiento */
+    .dropdown-content::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+        /* Color de fondo del riel */
+        border-radius: 5px;
+        /* Borde redondeado */
+    }
+
+    /* Animación al hacer hover */
+    .card:hover .dropdown-content,
+    .card.active .dropdown-content {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+
+
+    .text {
+        position: absolute;
+        top: 20%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        /* Coloca el texto encima de la imagen */
+        color: rgb(0, 0, 0);
+        font-family: "Rubik Doodle Shadow", system-ui;
+        font-weight: 800;
+        font-style: normal;
+        /* Color del texto */
+    }
+
+    @media (max-width: 1400px) {
+        .container-image {
+            position: relative;
+            margin-top: 40px;
+            width: auto;
+            /* Ajusta el ancho según sea necesario */
+            height: auto;
+            /* Ajusta la altura según sea necesario */
+        }
+    }
+
+    @media (max-width: 1200px) {
+        .container-image {
+            position: relative;
+            margin-top: 40px;
+            width: auto;
+            /* Ajusta el ancho según sea necesario */
+            height: auto;
+            /* Ajusta la altura según sea necesario */
+        }
+    }
+
+    @media (max-width: 800px) {
+        .container-image {
+            position: relative;
+            margin-top: 40px;
+            width: auto;
+            /* Ajusta el ancho según sea necesario */
+            height: auto;
+            /* Ajusta la altura según sea necesario */
+        }
+
+        .text {
+            /* Tamaño de letra más pequeño */
+            position: absolute;
+            top: 30%;
+            left: 37%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            /* Coloca el texto encima de la imagen */
+            color: white;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+    }
+
+    .btn {
+        color: #000000;
+        background-color: #ffffff;
+        font-size: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 100%;
+        padding: 12px 15px 11px;
+        border-radius: 20px;
+        box-shadow: 1px 1px 1px #b4ffc463, -1px -1px 1px #b4ffc463;
+        border: none;
+        transition: all 0.5s ease 0s;
+    }
+
+    .btn:hover,
+    .btn:focus {
+        border: 2px solid white;
+        background-color: #047D80;
+        color: #000000;
+        letter-spacing: 3px;
+        box-shadow: none;
+        outline: none;
+    }
+
+    .card {
+        transition: transform 0.3s ease;
+        margin-top: 45px;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+        background-color: #ebebeba6;
+        border-style: solid 1px;
+        border-color: #000000;
+    }
+
+    .social-link {
+        display: inline-block;
+        font-size: 24px;
+        /* ajusta el tamaño del ícono según sea necesario */
+        transition: transform 0.3s ease;
+    }
+
+    .social-link:hover {
+        transform: scale(1.2);
+        /* escala el tamaño del ícono al 120% */
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+
+    .image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ajusta la imagen para cubrir todo el contenedor */
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
+        /* Forma de montaña invertida */
+    }
+
+    .carousel-item img {
+        margin-top: 55px;
+        height: auto;
+        max-height: 100vh;
+        object-fit: cover;
+    }
+
+    /* Estilos para el contenedor del botón de WhatsApp y la burbuja de mensaje */
+    .whatsapp-container {
+        position: fixed;
+        bottom: 20px;
+        /* Distancia desde la parte inferior */
+        right: 20px;
+        /* Distancia desde la parte derecha */
+        z-index: 9999;
+        /* Para asegurar que esté por encima de otros elementos */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Estilos para la burbuja de mensaje */
+    .mensaje-burbuja {
+        background-color: #047D80;
+        color: #000000;
+        padding: 10px 15px;
+        border-radius: 20px 20px 5px 20px;
+        /* Ajuste en la esquina inferior izquierda */
+        margin-right: 10px;
+        /* Espacio entre la burbuja y el botón */
+        animation: mensajeEntrante 1s ease-in-out, mensajeSaliente 1s ease-in-out 10s forwards;
+        /* Animación de entrada y salida */
+    }
+
+    /* Estilos para el botón de WhatsApp */
+    .whatsapp-btn img {
+        width: 64px;
+        height: 64px;
+        transition: width 0.5s, height 0.5s;
+        /* Transición para el cambio de tamaño */
+    }
+
+    /* Estilos para el botón de WhatsApp más pequeño */
+    .whatsapp-btn.small img {
+        width: 54px;
+        height: 54px;
+    }
+
+    /* Animación de entrada */
+    @keyframes mensajeEntrante {
+        0% {
+            transform: translateX(20px);
+            /* Empieza un poco a la izquierda de la posición normal */
+            opacity: 0;
+            /* Inicia invisible */
+        }
+
+        100% {
+            transform: translateX(0);
+            /* Llega a la posición normal */
+            opacity: 1;
+            /* Se vuelve visible */
+        }
+    }
+
+    /* Animación de salida */
+    @keyframes mensajeSaliente {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    footer {
+        background: rgb(4, 125, 128);
+        background: linear-gradient(0deg, rgb(4, 125, 128) 0%, rgb(145, 253, 255) 42%, rgb(219, 254, 255) 100%);
+        background-size: cover;
+        color: rgb(0, 0, 0);
+        margin-top: 45px;
+    }
+
+    @keyframes expandHighlight {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        50% {
+            transform: scale(1.2);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .highlight {
+        animation: expandHighlight 1s ease-in-out;
+    }
+
+
+    /* Contenedor del buscador */
+    .search-form {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 600px;
+    }
+
+    /* Input de búsqueda */
+    .search-input {
+        height: 64px;
+        width: calc(100% - 100px);
+        /* Ajustar según el ancho deseado */
+        padding: 15px;
+        font-size: 18px;
+        border: none;
+        border-radius: 25px 0 0 25px;
+        outline: none;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s ease, width 0.3s ease;
+        text-transform: uppercase;
+        /* Convertir texto a mayúsculas */
+    }
+
+    .search-input:focus {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        width: calc(100% - 150px);
+        /* Ajustar según el ancho deseado */
+    }
+
+    /* Botón de búsqueda */
+    .search-btn {
+        width: 100px;
+        /* Ajustar según el ancho deseado */
+        background: #ffffff;
+        color: #000000;
+        font-size: 20px;
+        cursor: pointer;
+        border-radius: 0 25px 25px 0;
+        transition: background 0.3s ease;
+    }
+
+    .search-btn:hover {
+        background: #0056b3;
+    }
+
+    /* Icono de búsqueda */
+    .search-icon {
+        font-size: 24px;
+        vertical-align: middle;
+    }
+
+    /* Lista de sugerencias */
+    .suggestions-list {
+        position: absolute;
+        width: calc(100% - 2px);
+        /* Ajuste fino para alineación */
+        top: 100%;
+        left: 0;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-top: none;
+        border-radius: 0 0 10px 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: none;
+        max-height: 200px;
+        overflow-y: auto;
+        transition: opacity 0.3s ease, transform 0.3s ease, top 0.3s ease;
+        transform-origin: top center;
+        transform: scaleY(0);
+        text-transform: uppercase;
+        /* Convertir texto a mayúsculas */
+        list-style-type: none;
+        /* Eliminar viñetas */
+        margin: 0;
+        padding: 0;
+    }
+
+    .suggestions-list.show {
+        display: block;
+        transform: scaleY(1);
+        opacity: 1;
+        top: calc(100% + 2px);
+        /* Ajuste fino para alineación */
+    }
+
+    .suggestion-item {
+        padding: 15px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        /* Línea delgada y transparente */
+    }
+
+    .suggestion-item:last-child {
+        border-bottom: none;
+        /* Eliminar borde inferior del último elemento */
+    }
+
+    .suggestion-item:hover {
+        background: #f0f0f0;
+    }
+
+    /* Estilos para el scroll */
+    .suggestions-list::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .suggestions-list::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    .suggestions-list::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+
+
+    /* Estilos para el botón */
+    #miBoton {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #008CBA;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Estilos para el popup */
+    #miPopup {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20% 30% 20% 30%;
+        border: 2px solid #008CBA;
+        border-radius: 10px;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 90%;
+        height: 90%;
+        max-width: 2000px;
+        max-height: 2000px;
+        z-index: 1000;
+        background-image: url('https://i.ibb.co/ZhYSF3R/FONDO-PAGINA-WEB-VARISTI.jpg');
+        background-size: cover;
+        /* Asegura que la imagen cubra todo el contenedor */
+        background-position: center;
+        /* Centra la imagen */
+        background-repeat: no-repeat;
+        /* Evita la repetición de la imagen */
+        color: #000;
+        /* Color del texto para asegurar su legibilidad */
+    }
+
+    /* Estilos para el fondo oscuro */
+    #fondoOscuro {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+    }
+
+    /* Estilos para el botón de unirse a WhatsApp */
+    #unirseWhatsApp {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #047D80;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        /* Elimina el subrayado del enlace */
+        display: inline-block;
+    }
+
+    /* Estilos para el botón de cerrar */
+    #cerrarPopup {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    /* Consultas de medios para pantallas pequeñas */
+    @media (max-width: 768px) {
+        #miPopup {
+            padding: 10% 15%;
+            /* Reduce el padding para pantallas más pequeñas */
+            width: 90%;
+            /* Asegura que el popup no exceda el ancho de la pantalla */
+            height: auto;
+            /* Ajusta la altura automáticamente */
+            max-width: 90vw;
+            /* Limita el ancho máximo a un 90% del viewport width */
+            max-height: 80vh;
+            /* Limita la altura máxima a un 80% del viewport height */
+        }
+    }
+
+    /* Consultas de medios para pantallas muy pequeñas */
+    @media (max-width: 480px) {
+        #miPopup {
+            padding: 5% 10%;
+            /* Menos padding para pantallas muy pequeñas */
+            width: 95%;
+            /* Casi el 100% del ancho del viewport */
+            height: auto;
+            /* Ajusta la altura automáticamente */
+            max-width: 95vw;
+            /* Limita el ancho máximo a un 95% del viewport width */
+            max-height: 70vh;
+            /* Limita la altura máxima a un 70% del viewport height */
+        }
+    }
+</style>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
+            aria-label="Slide 5"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img class="image" src="https://www.elhuecoentucasa.com/imagenes/IMAGEN-PRINCIPAL-BELLEZA.webp"
+                class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5 style="color: #000000;">Título 1</h5>
+                <p style="color: #000000;">Descripción 1</p> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="image" src="https://www.elhuecoentucasa.com/imagenes/IMAGEN-PRINCIPAL-BELLEZA.webp"
+                class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5 style="color: #000000;">Título 2</h5>
+                <p style="color: #000000;">Descripción 2</p> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="image" src="https://www.elhuecoentucasa.com/imagenes/IMAGEN-PRINCIPAL-BELLEZA.webp"
+                class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5 style="color: #000000;">Título 3</h5>
+                <p style="color: #000000;">Descripción 3</p> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="image" src="https://www.elhuecoentucasa.com/imagenes/IMAGEN-PRINCIPAL-BELLEZA.webp"
+                class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5 style="color: #000000;">Título 4</h5>
+                <p style="color: #000000;">Descripción 3</p> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img class="image" src="https://www.elhuecoentucasa.com/imagenes/IMAGEN-PRINCIPAL-BELLEZA.webp"
+                class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5 style="color: #000000;">Título 4</h5>
+                <p style="color: #000000;">Descripción 3</p> -->
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+    </button>
+</div>
+
+
+
+
+
+<body id="content">
+
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light fixed-top mask-custom shadow-0 navbar-custom">
+        <div class="container">
+            <a style="padding-left: 20px;" class="navbar-brand" href="/">
+                <img src="https://res.cloudinary.com/dvyenqzki/image/upload/v1739135375/Imagen_de_WhatsApp_2025-02-09_a_las_16.03.51_56e6f4f7_ixkvvw.jpg"
+                    alt="Logo" width="70" height="70" style="border-radius: 50%;">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: solid 2px rgb(0, 0, 0);">
+                <i class="bi bi-list" style="color: #000000;"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="/">Inicio</a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="#catalogos">Catálogos</a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="#contactoFooter">Contacto</a></b>
+                    </li>
+                    <li class="nav-item">
+                        <b><a class="nav-link" style="color: rgb(0, 0, 0); padding-right: 40px; font-size: 24px;"
+                                href="#">Sobre Nosotros</a></b>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div id="catalogos" class="container">
+        <h1 class="text-center display-4" style="margin-top: 120px;">
+            <img src="https://res.cloudinary.com/dvyenqzki/image/upload/v1729356341/tienda-online_zz7mgz.gif"
+                alt="VARISTI" style="max-width: 200px; height: 140px; border-radius: 45%;">
+        </h1>
+    </div>
+
+
+
+    <h1 style="font-size: 48px; text-align: center; margin-top: 1rem; color: #000000;">NUESTROS CATÁLOGOS</h1>
+
+
+    <div class="container mt-5">
+        <div class="row">
+
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 mx-auto">
+                        <form action="/catalogosCompleto#CatalogosPrincipal" method="GET"
+                            class="form-inline justify-content-center search-form">
+                            <div class="form-group input-group" style="width: 100%; max-width: 600px;">
+                                <input type="text" id="buscador" name="q" placeholder="¿Qué estás buscando?"
+                                    class="form-control search-input" autocomplete="off">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn search-btn"
+                                        style="border-radius: 0 25px 25px 0; height: 64px;">
+                                        <i class="bi bi-search search-icon"></i>
+                                    </button>
+                                </div>
+                                <ul id="suggestions" class="suggestions-list"></ul>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col-md-4 mb-4" id="catalogosCompleto">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-CATALOGO COMPLETO CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">CATÁLOGO COMPLETO</h5>
+                        <div class="dropdown-content">
+                            <a href="/catalogosCompleto">CATÁLOGO COMPLETO</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-4" id="bellezaycuidadopersonal">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-CATALOGO BELLEZA CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">BELLEZA Y CUIDADO PERSONAL</h5>
+                        <div class="dropdown-content">
+                            <a href="/belleza">BELLEZA</a>
+                            <a href="/deporte">DEPORTE</a>
+                            <a href="/masajeadores">MASAJEADORES</a>
+                            <a href="/maquinasypatilleras">MAQUINAS Y PATILLERAS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-4" id="conectividadyelectronica">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-CONECTIVIDAD CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">CONECTIVIDAD Y ELECTRÓNICA</h5>
+                        <div class="dropdown-content">
+                            <a href="audifonos">AUDÍFONOS</a>
+                            <a href="cablesCargadores">CABLES CARGADORES</a>
+                            <a href="camaras">CÁMARAS</a>
+                            <a href="controlesTV">CONTROLES TV</a>
+                            <a href="memorias">MEMORIAS</a>
+                            <a href="parlantes">PARLANTES</a>
+                            <a style="display: none;" href="powerBank">POWER BANK</a>
+                            <a href="radios">RADIOS</a>
+                            <a href="tecnologia">TECNOLOGÍA</a>
+                            <a href="telefono">TELÉFONOS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-4" id="energiaeiluminacion">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-ENERGÃA CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">ENERGÍA E ILUMINACIÓN</h5>
+                        <div class="dropdown-content">
+                            <a href="bombillos">BOMBILLOS</a>
+                            <a href="candados">CANDADOS</a>
+                            <a href="extensionesyMultitomas">EXTENSIONES Y MULTITOMAS</a>
+                            <a href="lamparas">LÁMPARAS</a>
+                            <a href="lamparasInfantiles">LÁMPARAS INFANTILES</a>
+                            <a href="linternas">LINTERNAS</a>
+                            <a href="pilas">PILAS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-4" id="hogarycocina">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-HOGAR Y COCINA CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">HOGAR Y COCINA</h5>
+                        <div class="dropdown-content">
+                            <a href="bolsasViajeras">BOLSAS VIAJERAS</a>
+                            <a href="campamento">CAMPAMENTO</a>
+                            <a href="cocina">COCINA</a>
+                            <a href="exprimidores">EXPRIMIDORES</a>
+                            <a href="ferreteria">FERRETERÍA</a>
+                            <a href="grameras">GRAMERAS</a>
+                            <a href="hervidoresycafeteras">HERVIDORES Y CAFETERAS</a>
+                            <a href="humidificadores">HUMIDIFICADORES</a>
+                            <a href="impermeables">IMPERMEABLES</a>
+                            <a href="licuadoras">LICUADORAS</a>
+                            <a href="ollasArroceras">OLLAS ARROCERAS</a>
+                            <a href="ollasPresion">OLLAS A PRESIÓN</a>
+                            <a href="organizadores">ORGANIZADORES</a>
+                            <a href="picatodos">PICATODOS</a>
+                            <a href="pistolasdeSilicona">PISTOLAS DE SILICONA</a>
+                            <a href="planchasdeRopa">PLANCHAS DE ROPA</a>
+                            <a href="relojes">RELOJES DE PARED</a>
+                            <a href="sombrillas">SOMBRILLAS</a>
+                            <a href="termos">TERMOS</a>
+                            <a href="veladoras">VELADORAS</a>
+                            <a href="ventiladores">VENTILADORES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-4" id="jugueteriayentretenimiento">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-ENTRETENIMIENTO CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">JUGUETERIA Y ENTRETENIMIENTO
+                        </h5>
+                        <div class="dropdown-content">
+                            <a href="escolar">ESCOLAR</a>
+                            <a href="juguetes">JUGUETES</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-4 mb-4" id="mascotas">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-MASCOTAS CUADRADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">MASCOTAS</h5>
+                        <div class="dropdown-content">
+                            <a href="mascotas">MASCOTAS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 mb-4" id="saludybienestar">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-SALUD Y BINIESTAR CUADRDADO.webp" height="350px"
+                        class="card-img-top" alt="Belleza">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">SALUD Y BIENESTAR</h5>
+                        <div class="dropdown-content">
+                            <a href="insumosMedicos">INSUMOS MÉDICOS</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4" id="navidad">
+                <div class="card h-100" onclick="toggleDropdown(this)">
+                    <img src="https://www.elhuecoentucasa.com/imagenes/PORTADA-WEB VARISTI (NAVIDAD CUADRADO).webp"
+                        height="350px" class="card-img-top" alt="Navidad">
+                    <div class="card-body d-flex flex-column justify-content-center">
+                        <h5 class="card-title text-center" style="color: rgb(0, 0, 0);">NAVIDAD</h5>
+                        <div class="dropdown-content">
+                            <a href="navidad">NAVIDAD</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+    <!-- ESTE ES EL FOOTER -->
+    <footer class="p-3 mb-2" class="text-muted">
+        <section class="">
+
+
+
+
+
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+            <!-- <button id="miBoton">Mostrar Mensaje</button> -->
+
+            <div id="fondoOscuro"></div>
+
+            <div id="miPopup">
+                <p>¡Únete a la Familia Varisti!<br><br>
+                    No te pierdas ninguna oferta, promoción o novedad. Sé el primero en enterarte de nuestros productos
+                    y descuentos exclusivos. Haz parte de nuestra lista de difusión en WhatsApp y disfruta de todo lo
+                    que Cacharrería Varisti tiene para ti. ¡Es fácil y rápido! Simplemente envíanos un mensaje al
+                    <strong>+573113752583</strong> y únete a nuestra comunidad. ¡Te esperamos!
+                </p>
+                <a style="color: #000;" id="unirseWhatsApp" href="javascript:void(0);" onclick="enviarWhatsApp()">Unirse
+                    a WhatsApp</a>
+
+                <script>
+                    function enviarWhatsApp() {
+                        Swal.fire({
+                            title: '👋 ¡Hola!',
+                            html: '<p>👤 Por favor, ingresa tu nombre completo:</p>',
+                            input: 'text',
+                            inputPlaceholder: 'Nombre completo',
+                            showCancelButton: true,
+                            confirmButtonText: '✉️ Enviar',
+                            cancelButtonText: 'Cancelar',
+                            inputValidator: (value) => {
+                                if (!value) {
+                                    return 'Por favor, ingresa tu nombre completo';
+                                }
+                            }
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                let nombre = encodeURIComponent(result.value);
+                                let url = `https://wa.me/+573113752583?text=👋%20Hola,%20he%20visitado%20su%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20formar%20parte%20de%20la%20lista%20de%20difusi%C3%B3n.%0A%0A👤%20Mi%20nombre%20completo%20es%3A%20${nombre}.%0A%0A✉️%20Agradezco%20mucho%20su%20atenci%C3%B3n.`;
+                                window.open(url, '_blank');
+                            }
+                        });
+                    }
+                </script>
+
+                <button id="cerrarPopup">Cerrar</button>
+            </div>
+
+            <script>
+                // Mostrar el popup al presionar el botón
+                document.getElementById("miBoton").onclick = function () {
+                    document.getElementById("miPopup").style.display = "block";
+                    document.getElementById("fondoOscuro").style.display = "block";
+                }
+
+                // Cerrar el popup
+                document.getElementById("cerrarPopup").onclick = function () {
+                    document.getElementById("miPopup").style.display = "none";
+                    document.getElementById("fondoOscuro").style.display = "none";
+                }
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="tooltip" class="tooltip">
+                <p>¡Únete a la Familia Varisti!<br>
+                    No te pierdas ninguna oferta, promoción o novedad. Sé el primero en enterarte de nuestros productos
+                    y descuentos exclusivos. Haz parte de nuestra lista de difusión en WhatsApp y disfruta de todo lo
+                    que Cacharrería Varisti tiene para ti.<br><br>
+                    ¡Es fácil y rápido! Simplemente envíanos un mensaje al <strong>[número de WhatsApp]</strong> y únete
+                    a nuestra comunidad. ¡Te esperamos!</p>
+            </div>
+
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <hr class="my-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem "></i>NUESTROS CATÁLOGOS
+                        </h6>
+                        <hr class="my-4">
+                        <p>
+                            <a href="./#bellezaycuidadopersonal" class="text-reset">BELLEZA Y CUIDADO PERSONAL</a>
+                        </p>
+                        <p>
+                            <a href="./#conectividadyelectronica" class="text-reset">CONECTIVIDAD Y ELECTRÓNICA</a>
+                        </p>
+                        <p>
+                            <a href="./#energiaeiluminacion" class="text-reset">ENERGÍA E ILUMINACIÓN</a>
+                        </p>
+                        <p>
+                            <a href="./#hogarycocina" class="text-reset">HOGAR Y COCINA</a>
+                        </p>
+                        <p>
+                            <a href="./#jugueteriayentretenimiento" class="text-reset">JUGUETERIA Y ENTRETENIMIENTO</a>
+                        </p>
+                        <p>
+                            <a href="./#mascotas" class="text-reset">MASCOTAS</a>
+                        </p>
+                        <p>
+                            <a href="./#saludybienestar" class="text-reset">SALUD Y BIENESTAR</a>
+                        </p>
+
+
+
+
+
+
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-3 mx-auto mb-4">
+                        <!-- Links -->
+                        <hr class="my-4">
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            CENTRO DE AYUDA
+                        </h6>
+                        <hr class="my-4">
+                        <p>
+                            <a id="contactoFooter"
+                                href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+                                class="text-uppercase text-reset">CONTÁCTANOS</a>
+                        </p>
+                        <p>
+                            <a href="../../public/politicas_de_privacidad.pdf" download="politicas_de_privacidad.pdf"
+                                class="text-uppercase text-reset">POLÍTICAS Y PRIVACIDAD</a>
+                        </p>
+
+                    </div>
+
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <hr class="my-4">
+                        <h6 class="text-uppercase fw-bold mb-4">¿Deseas más información?</h6>
+                        <hr class="my-4">
+                        <p>
+                            <a class="text-uppercase" href="https://maps.app.goo.gl/U1r1XYDnRhXrnMzi7" target="_blank"
+                                style="color: #000000;">
+                                <img src="https://i.ibb.co/CtJjRRF/pixelcut-export-14.png" alt="" width="24px"
+                                    height="24px">CALLE 24 #70-06, BELEN, AEROPARQUE
+                            </a>
+                        </p>
+                        <p>
+                            <a class="text-uppercase" href="mailto:elhuecoentucasa@gmail.com" target="_blank"
+                                style="color: #000000;">
+                                <img src="https://i.ibb.co/YBd0krT/gmail.png" alt="" width="24px" height="24px">
+                                elhuecoentucasa@gmail.com
+                            </a>
+                        </p>
+                        <p>
+                            <i class="bi bi-telephone-fill">3113752583</i>
+                        </p>
+                        <hr class="my-4">
+                        <h3>Nuestro Horario de Atención</h3>
+                        <h5>Lunes a Lunes: 8:00AM - 10:00PM</h5>
+                    </div>
+                    <section class="d-flex justify-content-center col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+                        <div>
+                            <a href="https://www.facebook.com/profile.php?id=61560352376065&locale=es_LA"
+                                target="_blank" class="me-4 text-reset social-link">
+                                <img src="https://i.ibb.co/t2fgDs8/pixelcut-export-12.png" alt="Facebook" width="32px"
+                                    height="32px">
+                            </a>
+
+                            <!-- <a href="https://twitter.com/?lang=es" target="blank" class="me-4 text-reset social-link">
+                                <i class="bi bi-twitter-x" style="color: #000000;"></i>
+                            </a> -->
+
+                            <a href="https://www.instagram.com/cacharreria.varisti?igsh=MXhtZG1vNmU2MHo2dg=="
+                                target="_blank" class="me-4 text-reset social-link">
+                                <img src="https://i.ibb.co/k8D15jF/pixelcut-export-10.png" alt="Instagram" width="32px"
+                                    height="32px">
+                            </a>
+                            <a href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+                                target="_blank" class="me-4 text-reset social-link">
+                                <img src="https://i.ibb.co/LJMBh1s/social.png" alt="Whatsapp" width="32px"
+                                    height="32px">
+                            </a>
+
+                        </div>
+                        <!-- Right -->
+                    </section> <!-- Grid row -->
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 mb-4 mx-auto text-center">
+                            <hr class="my-4">
+                            <p class="text-uppercase">&copy; <%= new Date().getFullYear() %> El Hueco en tu Casa... Todos los
+                                    derechos reservados...</p>
+                            <p>
+                                <a href="/politicas" class="text-uppercase text-reset" target="_blank">Política de
+                                    privacidad | Términos y condiciones</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <div class="whatsapp-container">
+        <a href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+            target="_blank">
+            <div class="mensaje-burbuja">¿Quieres asesoría?<br><b>Activar chat</b></div>
+        </a>
+        <!-- Botón de WhatsApp -->
+        <a href="https://wa.me/573113752583?text=Hola,%20he%20visitado%20su%20tienda%20online%20El%20Hueco%20en%20tu%20Casa%20y%20me%20gustaría%20recibir%20más%20información,%20por%20favor."
+            target="_blank" class="whatsapp-btn">
+            <img src="https://i.ibb.co/LJMBh1s/social.png" alt="WhatsApp">
+        </a>
+    </div>
+
+</body>
+
+<script>
+    // Función para quitar acentos y caracteres especiales
+    function quitarAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    // Evento para mostrar sugerencias al escribir
+    document.getElementById("CatalogosPrincipal").addEventListener("submit", function (event) {
+        const searchInput = document.getElementById("buscador");
+        searchInput.value = quitarAcentos(searchInput.value); // Normaliza y convierte a minúsculas sin acentos
+    });
+</script>
+
+<script>
+    // Lista de sugerencias de ejemplo
+    const suggestionsData = [
+        "cepillo dental",
+        "cépillo de pelo",
+        "cepillo para uñas",
+        "cepillo de baño",
+        "cepillo de cocina",
+        "cepillo para mascotas",
+        "cepillo eléctrico",
+        "cepillo manual",
+        "cepillo de limpieza",
+        "cepillo facial"
+    ];
+
+    // Elementos del DOM
+    const searchInput = document.getElementById("buscador");
+    const suggestionsList = document.getElementById("suggestions");
+
+    // Evento para mostrar sugerencias al escribir
+    searchInput.addEventListener("input", function () {
+        const query = quitarAcentos(this.value.toLowerCase()); // Normaliza y convierte a minúsculas
+
+        suggestionsList.innerHTML = "";
+
+        if (query) {
+            const filteredSuggestions = suggestionsData.filter(item =>
+                quitarAcentos(item.toLowerCase()).includes(query)
+            );
+
+            filteredSuggestions.forEach(item => {
+                const suggestionItem = document.createElement("li");
+                suggestionItem.textContent = item;
+                suggestionItem.classList.add("suggestion-item");
+
+                suggestionItem.addEventListener("click", function () {
+                    searchInput.value = item;
+                    suggestionsList.innerHTML = "";
+                    suggestionsList.classList.remove("show");
+                });
+
+                suggestionsList.appendChild(suggestionItem);
+            });
+
+            suggestionsList.classList.add("show");
+        } else {
+            suggestionsList.classList.remove("show");
+        }
+    });
+
+    // Función para quitar acentos y caracteres especiales
+    function quitarAcentos(texto) {
+        return texto.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    // Evento para ocultar sugerencias al hacer clic fuera del buscador
+    document.addEventListener("click", function (event) {
+        if (!searchInput.contains(event.target) && !suggestionsList.contains(event.target)) {
+            suggestionsList.classList.remove("show");
+        }
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('a').forEach(function (link) {
+            link.addEventListener('click', function (event) {
+                if (this.hash) {
+                    // Store the hash in localStorage
+                    localStorage.setItem('scrollTo', this.hash);
+                }
+            });
+        });
+    });
+</script>
+
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+            document.getElementById("navbar").style.opacity = "1"; // Restablece la opacidad al hacer scroll hacia arriba
+        } else {
+            document.getElementById("navbar").style.top = "-65px";
+            document.getElementById("navbar").style.opacity = "0.5"; // Cambia la opacidad al hacer scroll hacia abajo
+        }
+        document.getElementById("navbar").style.transition = "top 0.6s, opacity 0.6s"; // Aplica transición suave
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+
+<script>
+    setTimeout(function () {
+        document.querySelector('.whatsapp-btn').classList.add('small');
+    }, 6000); // 6 segundos para la animación de salida
+</script>
+
+<script>
+    function toggleDropdown(element) {
+        var dropdownContent = element.querySelector('.dropdown-content');
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            // Ocultar otros menús desplegables antes de mostrar este
+            hideAllDropdowns();
+            dropdownContent.style.display = "block";
+        }
+    }
+
+    function hideAllDropdowns() {
+        var allDropdowns = document.querySelectorAll('.dropdown-content');
+        allDropdowns.forEach(function (dropdown) {
+            dropdown.style.display = "none";
+        });
+    }
+
+    // Ocultar los menús desplegables al cargar la página
+    window.addEventListener('load', function () {
+        hideAllDropdowns();
+    });
+
+    // Detectar clic fuera de los menús desplegables para cerrarlos
+    document.addEventListener('click', function (event) {
+        if (!event.target.closest('.card')) {
+            hideAllDropdowns();
+        }
+    });
+</script>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Check if there's a hash stored in localStorage
+        var hash = localStorage.getItem('scrollTo');
+        if (hash) {
+            // Remove the item from localStorage
+            localStorage.removeItem('scrollTo');
+
+            // Get the target element
+            var target = document.querySelector(hash);
+
+            if (target) {
+                // Scroll to the target element with offset
+                var offset = 400; // Puedes ajustar el valor del margen aquí
+                target.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
+
+                // Scroll by additional offset
+                window.scrollBy(0, -offset);
+
+                // Apply the highlight class after a delay of 2 seconds
+                setTimeout(function () {
+                    target.classList.add('highlight');
+
+                    // Optionally, remove the highlight class after animation ends
+                    setTimeout(function () {
+                        target.classList.remove('highlight');
+                    }, 1500); // Match the duration of the CSS animation
+                }, 1000); // 2 seconds delay
+            }
+        }
+    });
+
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+</html>
