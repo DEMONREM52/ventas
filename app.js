@@ -47,19 +47,19 @@ const authenticate = require("./middleware/authenticate");
 // Configuración de Express
 const app = express();
 
-const port = process.env.PORT || 4000;
-const DB_HOST = process.env.DB_HOST || "localhost";
-const DB_USER = process.env.DB_USER || "root";
-const DB_PASSWORD = process.env.DB_PASSWORD || "";
-const DB_NAME = process.env.DB_NAME || "ventas_db";
-const DB_PORT = process.env.DB_PORT || "3306";
-
-// const port = process.env.PORT || 80;
-// const DB_HOST = process.env.DB_HOST || "varisti_varisti-db";
-// const DB_USER = process.env.DB_USER || "mysql";
-// const DB_PASSWORD = process.env.DB_PASSWORD || "44ed5041c9aafd7ec4a4";
-// const DB_NAME = process.env.DB_NAME || "varisti";
+// const port = process.env.PORT || 4000;
+// const DB_HOST = process.env.DB_HOST || "localhost";
+// const DB_USER = process.env.DB_USER || "root";
+// const DB_PASSWORD = process.env.DB_PASSWORD || "";
+// const DB_NAME = process.env.DB_NAME || "ventas_db";
 // const DB_PORT = process.env.DB_PORT || "3306";
+
+const port = process.env.PORT || 80;
+const DB_HOST = process.env.DB_HOST || "ventas_database";
+const DB_USER = process.env.DB_USER || "javier";
+const DB_PASSWORD = process.env.DB_PASSWORD || "ae4f7b467325e599318e";
+const DB_NAME = process.env.DB_NAME || "ventas";
+const DB_PORT = process.env.DB_PORT || "3306";
 
 app.use(
   session({
