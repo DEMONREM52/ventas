@@ -61,6 +61,12 @@ const DB_PASSWORD = process.env.DB_PASSWORD || "ae4f7b467325e599318e";
 const DB_NAME = process.env.DB_NAME || "ventas";
 const DB_PORT = process.env.DB_PORT || "3306";
 
+app.use((err, req, res, next) => {
+  console.error("Error en la aplicación:", err.stack);
+  res.status(500).send("Error interno del servidor");
+});
+
+
 app.use(
   session({
     secret: "secret-key", // Cambia esto por una cadena de caracteres aleatoria y segura
