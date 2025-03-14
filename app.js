@@ -58,8 +58,8 @@ const port = process.env.PORT || 80;
 const DB_HOST = process.env.DB_HOST || "ventas_database";
 const DB_USER = process.env.DB_USER || "javier";
 const DB_PASSWORD = process.env.DB_PASSWORD || "ae4f7b467325e599318e";
-const DB_NAME = process.env.DB_NAME || "ventas";
-const DB_PORT = process.env.DB_PORT || "3306";
+const DB_NAME = process.env.DB_NAME || "ventas"; 
+const DB_PORT = process.env.DB_PORT || "3306"; 
 
 app.use((err, req, res, next) => {
   console.error("Error en la aplicación:", err.stack);
